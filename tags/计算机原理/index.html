@@ -82,7 +82,7 @@
 <meta name="description" content="welcome to my blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="amy">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/计算机原理/index.html">
 <meta property="og:site_name" content="amy">
 <meta property="og:description" content="welcome to my blog">
 <meta property="og:locale" content="zh-Hans">
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/计算机原理/"/>
 
 
 
 
 
-  <title>amy</title>
+  <title>标签: 计算机原理 | amy</title>
   
 
 
@@ -143,8 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -271,303 +270,53 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
+
+  
+  
+  
+  <div class="post-block tag">
+
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>计算机原理<small>标签</small>
+        </h1>
+      </div>
+
       
-
-  
-
-  
-  
-  
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/2018/02/23/浅谈计算机是如何存储数据的/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="amy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/pig.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="amy">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/02/23/浅谈计算机是如何存储数据的/" itemprop="url">浅谈计算机是如何存储数据的</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/blog/2018/02/23/浅谈计算机是如何存储数据的/" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">浅谈计算机是如何存储数据的</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-23T18:37:17+08:00">
-                2018-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/2018/02/23/浅谈计算机是如何存储数据的/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/02/23/浅谈计算机是如何存储数据的/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+            </a>
         
-          
-            <p><br>以前上计算机原理的课的时候，老师讲得总是不是很浅显易懂，为了防止自己成为井底之蛙，近期又去了解了下，做个笔记吧</p>
-<p>计算机就是二进制的世界，只存在0与1<br><br></p>
-<blockquote>
-<p>注：此处引自方方的文章</p>
-</blockquote>
-<p><b style="font-size:20px">first<b>：<br>那么0和1又是怎么存储的呢</b></b></p>
-<p><img src="../../../images/01存储机制.gif" alt="11" style="width:250px;height:250px"></p>
-<p></p><p style="position:relative;left:300px;top:-250px;font-size:20px
-">这是一个充电的过程</p><p></p>
-<p></p><p style="position:relative;left:300px;top:-250px;font-size:20px
-;color:red">存储</p><p></p>
-<p><li style="position:relative;left:300px;top:-250px;font-size:20px
-;color:green">1就充电</li></p>
-<p><li style="position:relative;left:300px;top:-250px;font-size:20px
-;color:green">0就不充电</li></p>
-<p></p><p style="position:relative;left:180px;top:-127px;font-size:20px
-;color:red">读取</p><p></p>
-<p><li style="position:relative;left:480px;top:-376px;font-size:20px
-;color:green">电量大于 50% 就是 1</li></p>
-<p><li style="position:relative;left:480px;top:-374px;font-size:20px
-;color:green">电量小于 50% 就是 0<br><br><br><br><br></li></p>
-<p></p><p style="position:relative;left:-480px;color:black">second：如何存储字符？<br><img src="../../../images/ascll码.jpg" style="width:500px"><br><br><br><br>将每个字符编号</p><p style="position:relative;left:-480px;color:black"><a href="ASCII 美国信息交换标准代码">ASCII 美国信息交换标准代码</a></p><p style="position:relative;left:-480px;color:black">如果你想储存 a，那么就储存 97 对应的二进制<br><br>a -&gt; 01100 0012 -&gt; 6116</p><p style="position:relative;left:-480px;color:black">如果你想储存 1，那么就储存 49 对应的二进制</p><p style="position:relative;left:-480px;color:black">1 -&gt; 0011 00012 -&gt; 3116</p>
+      </h2>
 
-          
-        
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-02-23T18:37:17+08:00"
+              content="2018-02-23" >
+          02-23
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
       
     </div>
-    
-    
-    
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
   
   
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/2018/02/23/使用hexo-gitpages搭建博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="amy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/pig.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="amy">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/02/23/使用hexo-gitpages搭建博客/" itemprop="url">使用hexo+gitpages搭建博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-23T16:01:53+08:00">
-                2018-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/2018/02/23/使用hexo-gitpages搭建博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/02/23/使用hexo-gitpages搭建博客/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="嘿嘿-最近学习了用hexo搭建博客-下面是本萌新的一些些经验"><a href="#嘿嘿-最近学习了用hexo搭建博客-下面是本萌新的一些些经验" class="headerlink" title="嘿嘿 最近学习了用hexo搭建博客 下面是本萌新的一些些经验~"></a>嘿嘿 最近学习了用hexo搭建博客 下面是本萌新的一些些经验~</h3><h5 id="注：我用的是mac系统"><a href="#注：我用的是mac系统" class="headerlink" title="注：我用的是mac系统"></a>注：我用的是mac系统</h5><hr>
-<p>以下是我安装的一些步骤：</p>
-<p>1.进入一个目录，我是放到documents的~以下以documents示例<br>2.在github上新建一个空的仓库，仓库的名称可以是你的用户名等等等<br>3.打开终端(在这里给大家推荐一个无敌好用终端替代品(iterm2)，具体自行谷歌和百度哦嘿嘿)<br>4.安装hexo npm install -g hexo-cli<br>5.hexo init myBlog(随便你想叫什么名字哈。。)<br>6.cd myBlog<br>7.npm i<br>8.可以在myblog下新建博客啦 hexo new xxxx(xxxx=博客的名字)<br>9.然后会出现一个md文档的路径<br>10.然后就愉快的编辑这个md文件吧 vim xxx.md<br>11.编辑网站设置 vim _config.yml </p>
-<ul>
-<li>把第6行的title改成whatever你喜欢的名字 </li>
-<li>把第9行的author改成你的名字哦 </li>
-<li>最后一行的type改成 type：git(!!：后面是有空格的) </li>
-<li>在最后一行后面新增一行，左边与type平齐。加上一行加上一行 repo: 仓库地址 （请将仓库地址改为「你的用户名.github.io」对应的仓库地址 </li>
-<li>!!: 这个冒号后面都有空格啊 （不要犯跟我一样的错误啦）<br>12.npm install hexo-deployer-git –save，安装 git 部署插件<br>13.hexo deploy<br>14.进入「你的用户名.github.io」对应的 repo，打开 GitHub Pages 功能，如果已经打开了，就直接点击预览链接<br>嘿嘿嘿 现在应该可以看到你的博客啦~ </li>
-</ul>
-<hr>
-<h2 id="hexo主题设置"><a href="#hexo主题设置" class="headerlink" title="hexo主题设置"></a>hexo主题设置</h2><p>对啦 hexo 还有很多主题 嘿嘿<br>1 <a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener">https://github.com/hexojs/hexo/wiki/Themes</a> 上面有主题合集<br>2 随便找一个主题，进入主题的 GitHub 首页 推荐大家 next<br>3 复制它的 SSH 地址或 HTTPS 地址<br>4 cd themes<br>5 git clone git@github.com:iissnan/hexo-theme-next.git<br>6 cd ..<br>7 将 _config.yml 的第 75 行改为 theme: hexo-theme-next，保存<br>8 hexo generate<br>9 hexo deploy<br>然后刷新博客 嘿嘿 尽情挑选吧</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
 
   
 
