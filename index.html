@@ -373,13 +373,35 @@
 <blockquote>
 <p>注：此处引自方方的文章</p>
 </blockquote>
-<h3 id="1-那么0和1又是怎么存储的呢"><a href="#1-那么0和1又是怎么存储的呢" class="headerlink" title="1 那么0和1又是怎么存储的呢"></a>1 那么0和1又是怎么存储的呢</h3><p><img src="/images/01.gif" alt="11" style="width:350px;height:350px"></p>
+<hr>
+<h3 id="1-那么0和1又是怎么存储的呢"><a href="#1-那么0和1又是怎么存储的呢" class="headerlink" title="1 那么0和1又是怎么存储的呢"></a>1 那么0和1又是怎么存储的呢</h3><p><img src="/blog/images/01.gif" alt="11" style="width:350px;height:350px"></p>
 <p>这是一个充电的过程</p>
 <p><strong>存储</strong>—&gt;1就充电，0就不充电</p>
-<p><strong>读取</strong>—&gt;电量大于 50% 就是 1，电量小于 50% 就是 0<br>second：如何存储字符？<br><img src="/images/ascll.jpg" style="width:500px"><br><br><br><br><strong>将每个字符编号</strong></p>
+<p><strong>读取</strong>—&gt;电量大于 50% 就是 1，电量小于 50% 就是 0</p>
+<hr>
+<h3 id="2-如何存储字符？"><a href="#2-如何存储字符？" class="headerlink" title="2 如何存储字符？"></a>2 如何存储字符？</h3><p><img src="/blog/images/ascll.jpg" style="width:500px"></p>
+<p>####<strong>将每个字符编号</strong></p>
 <p><a href="ASCII 美国信息交换标准代码">ASCII 美国信息交换标准代码</a></p>
 <p>如果你想储存 a，那么就储存 97 对应的二进制<br>a -&gt; 01100 0012 -&gt; 6116</p>
 <p>如果你想储存 1，那么就储存 49 对应的二进制<br>1 -&gt; 0011 00012 -&gt; 3116</p>
+<hr>
+<h3 id="3-中文如何存储？"><a href="#3-中文如何存储？" class="headerlink" title="3 中文如何存储？"></a>3 中文如何存储？</h3><p><a href="https://zh.wikipedia.org/wiki/GB_2312" target="_blank" rel="noopener">GB 2312 中国国家标准简体中文字符集</a></p>
+<p><img src="/blog/images/gb2312.png" alt="11" style="width:500px;"><br>GB2312 共收录 6763 个汉字，同时收录了包括拉丁字母、希腊字母、日文平假名及片假名字母、俄语西里尔字母在内的 682 个字符。</p>
+<p>后来为了存储生僻字、繁体字、日语、朝鲜语等，微软推出了 <a href="https://zh.wikipedia.org/wiki/%E6%B1%89%E5%AD%97%E5%86%85%E7%A0%81%E6%89%A9%E5%B1%95%E8%A7%84%E8%8C%83" target="_blank" rel="noopener">GBK 字符集</a></p>
+<hr>
+<h3 id="4-如何存储所有字符"><a href="#4-如何存储所有字符" class="headerlink" title="4 如何存储所有字符"></a>4 如何存储所有字符</h3><p>####<strong>将全球字符编号</strong></p>
+<h4 id="Unicode-字符集"><a href="#Unicode-字符集" class="headerlink" title="Unicode 字符集"></a><a href="https://zh.wikipedia.org/wiki/Unicode" target="_blank" rel="noopener">Unicode 字符集</a></h4><p>包括中日韩文字、藏文、盲文、楔形文字、 颜文字:-)、 绘文字😂</p>
+<p>2016年6月时，Unicode 总共有 128237 个字符</p>
+<hr>
+<h3 id="5-如何将-Unicode-存到计算机里"><a href="#5-如何将-Unicode-存到计算机里" class="headerlink" title="5 如何将 Unicode 存到计算机里"></a>5 如何将 Unicode 存到计算机里</h3><blockquote>
+<p>###以一种高性价比的方式</p>
+</blockquote>
+<hr>
+<p>####低性价比<br>a -&gt; 00000000 00000000 00000000 011000012 = 006116</p>
+<p>你 -&gt; 00000000 00000000 01001111 011000002 = 4F6016</p>
+<p>#####高性价比 UTF-8<br>a -&gt; 01100001</p>
+<p>你-&gt; 11100100 10111101 10100000</p>
+<hr>
 
           
         
