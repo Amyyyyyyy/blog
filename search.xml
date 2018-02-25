@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[关于HTML]]></title>
+    <url>%2Fblog%2F2018%2F02%2F25%2F%E5%85%B3%E4%BA%8EHTML%2F</url>
+    <content type="text"><![CDATA[W3C 引自维基百科 1 万维网联盟（World Wide Web Consortium，W3C），又称W3C理事会，是万维网的主要国际标准组织&nbsp;&nbsp;万维网联盟（W3C）由蒂姆·伯纳斯-李于1994年10月离开欧洲核子研究中心（CERN）后成立，在欧盟执委会和国防高等研究计划署（DARPA）的支持下成立于麻省理工学院MIT计算机科学与人工智能实验室（MIT／LCS） &nbsp;&nbsp;为解决网络应用中不同平台、技术和开发者带来的不兼容问题，保障网络信息的顺利和完整流通，万维网联盟制定了一系列标准并督促网络应用开发者和内容提供者遵循这些标准。标准的内容包括使用语言的规范，开发中使用的导则和解释引擎的行为等等。W3C也制定了包括XML和CSS等的众多影响深远的标准规范。 MDN Web Docs 引自维基百科 2 MDN Web Docs（旧称Mozilla Developer Network、Mozilla Developer Center，简称MDN）是一个汇集众多Mozilla基金会产品和网络技术开发文档的免费网站。&nbsp;&nbsp;该项目始于2005年，最初由Mozilla公司员工Deb Richardson领导。自2006年以来，文档工作由Eric Shepherd领导。 &nbsp;&nbsp;网站最初的内容是由DevEdge提供，但在AOL收购Netscape后，DevEdge网站也宣布关闭。为此Mozilla基金会向AOL获取了DevEdge发布的内容[3][2]，同时将DevEdge内容搬移到mozilla.org。 HTML所有标签3 什么是空标签MDN 的解释是：An empty element is an element from HTML, SVG, or MathML that cannot have any child nodes；我的理解是空标签就是没有html内容的标签，只需要写一个开始标签。 4 什么是可替换标签可替换元素就是浏览器根据元素的标签和属性，来决定元素的具体显示内容。 例如浏览器会根据img标签的src属性的值来读取图片信息并显示出来，而如果查看(x)html代码，则看不到图片的实际内容；又例如根据input标签的type属性来决定是显示输入框，还是单选按钮等。 (x)html中的img、input、textarea、select、object都是替换元素。这些元素往往没有实际的内容，即是一个空元素 5 是否可以区分块级元素和内联元素我个人的理解是，html并没有块级元素和内联元素之分，有的只是他们自身的默认css样式区分，html不管这个标签的样式，只管这个标签的内容和意义。]]></content>
+      <categories>
+        <category>html</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[浅谈计算机是如何存储数据的]]></title>
     <url>%2Fblog%2F2018%2F02%2F23%2F%E6%B5%85%E8%B0%88%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE%E7%9A%84%2F</url>
     <content type="text"><![CDATA[以前上计算机原理的课的时候，老师讲得总是不是很浅显易懂，为了防止自己成为井底之蛙，近期又去了解了下，做个笔记吧 计算机就是二进制的世界，只存在0与1 注：此处引自方方的文章 1 那么0和1又是怎么存储的呢 这是一个充电的过程 存储—&gt;1就充电，0就不充电 读取—&gt;电量大于 50% 就是 1，电量小于 50% 就是 0 2 如何存储字符？ ####将每个字符编号 ASCII 美国信息交换标准代码 如果你想储存 a，那么就储存 97 对应的二进制a -&gt; 01100 0012 -&gt; 6116 如果你想储存 1，那么就储存 49 对应的二进制1 -&gt; 0011 00012 -&gt; 3116 3 中文如何存储？GB 2312 中国国家标准简体中文字符集 GB2312 共收录 6763 个汉字，同时收录了包括拉丁字母、希腊字母、日文平假名及片假名字母、俄语西里尔字母在内的 682 个字符。 后来为了存储生僻字、繁体字、日语、朝鲜语等，微软推出了 GBK 字符集 4 如何存储所有字符####将全球字符编号 Unicode 字符集包括中日韩文字、藏文、盲文、楔形文字、 颜文字:-)、 绘文字😂 2016年6月时，Unicode 总共有 128237 个字符 5 如何将 Unicode 存到计算机里 ###以一种高性价比的方式 ####低性价比a -&gt; 00000000 00000000 00000000 011000012 = 006116 你 -&gt; 00000000 00000000 01001111 011000002 = 4F6016 #####高性价比 UTF-8a -&gt; 01100001 你-&gt; 11100100 10111101 10100000]]></content>
+      <categories>
+        <category>计算机原理</category>
+      </categories>
       <tags>
         <tag>计算机原理</tag>
       </tags>
