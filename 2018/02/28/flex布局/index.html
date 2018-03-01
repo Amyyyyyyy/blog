@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="布局," />
 
 
 
@@ -79,21 +79,18 @@
 
 
 
-<meta name="description" content="最近看了下之前的笔记，决定整理一下放在博客上面，如果有理解得不对的地方，还望指出！ 1 高度是由什么决定的内联元素内联元素的高度：跟字体有关系，但是可以设置高度和行高来规定内联元素的高度；">
-<meta name="keywords" content="css">
+<meta name="description" content="一、Flex 布局是什么？Flex：Flexible Box - 弹性布局。用来为盒状模型提供最大的灵活性；任何一个容器都可以指定为Flex布局；">
+<meta name="keywords" content="布局">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我对于css布局与定位的理解 1">
-<meta property="og:url" content="http://yoursite.com/2018/02/28/我对于css布局与定位的理解/index.html">
+<meta property="og:title" content="flex布局">
+<meta property="og:url" content="http://yoursite.com/2018/02/28/flex布局/index.html">
 <meta property="og:site_name" content="amy">
-<meta property="og:description" content="最近看了下之前的笔记，决定整理一下放在博客上面，如果有理解得不对的地方，还望指出！ 1 高度是由什么决定的内联元素内联元素的高度：跟字体有关系，但是可以设置高度和行高来规定内联元素的高度；">
+<meta property="og:description" content="一、Flex 布局是什么？Flex：Flexible Box - 弹性布局。用来为盒状模型提供最大的灵活性；任何一个容器都可以指定为Flex布局；">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/blog/images/line-box.png">
-<meta property="og:image" content="http://yoursite.com/blog/box-demo.png">
-<meta property="og:updated_time" content="2018-02-28T06:04:35.308Z">
+<meta property="og:updated_time" content="2018-03-01T02:37:14.209Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我对于css布局与定位的理解 1">
-<meta name="twitter:description" content="最近看了下之前的笔记，决定整理一下放在博客上面，如果有理解得不对的地方，还望指出！ 1 高度是由什么决定的内联元素内联元素的高度：跟字体有关系，但是可以设置高度和行高来规定内联元素的高度；">
-<meta name="twitter:image" content="http://yoursite.com/blog/images/line-box.png">
+<meta name="twitter:title" content="flex布局">
+<meta name="twitter:description" content="一、Flex 布局是什么？Flex：Flexible Box - 弹性布局。用来为盒状模型提供最大的灵活性；任何一个容器都可以指定为Flex布局；">
 
 
 
@@ -123,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/28/我对于css布局与定位的理解/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/28/flex布局/"/>
 
 
 
 
 
-  <title>我对于css布局与定位的理解 1 | amy</title>
+  <title>flex布局 | amy</title>
   
 
 
@@ -290,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/2018/02/28/我对于css布局与定位的理解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/2018/02/28/flex布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="amy">
@@ -307,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">我对于css布局与定位的理解 1</h1>
+          <h1 class="post-title" itemprop="name headline">flex布局</h1>
         
 
         <div class="post-meta">
@@ -319,7 +316,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T10:35:55+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T20:58:54+08:00">
                 2018-02-28
               </time>
             
@@ -360,9 +357,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/blog/2018/02/28/我对于css布局与定位的理解/#comments" itemprop="discussionUrl">
+                <a href="/blog/2018/02/28/flex布局/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/02/28/我对于css布局与定位的理解/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/02/28/flex布局/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -390,59 +387,87 @@
       
 
       
-        <p>最近看了下之前的笔记，决定整理一下放在博客上面，如果有理解得不对的地方，还望指出！</p>
-<h2 id="1-高度是由什么决定的"><a href="#1-高度是由什么决定的" class="headerlink" title="1 高度是由什么决定的"></a>1 高度是由什么决定的</h2><h3 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h3><p>内联元素的高度：跟字体有关系，但是可以设置高度和行高来规定内联元素的高度；<br><a id="more"></a><br>例如一个span标签中的字体，设置字体为12px，实际上并没有12px；一般内联元素的高度，都跟字体有直接关系。</p>
-<h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><p>块级元素的高度：由其内部文档流元素的高度总和决定</p>
-<h4 id="什么是文档流？"><a href="#什么是文档流？" class="headerlink" title="- 什么是文档流？"></a>- 什么是文档流？</h4><p>文档流的英文是: Normal Flow 我觉得英文的意思可能更准确一点，文档流就是文档内元素的流动方向；</p>
-<h4 id="内联元素："><a href="#内联元素：" class="headerlink" title="内联元素："></a>内联元素：</h4><pre><code>* 内联元素从左往右流动，如果宽度不够时，就会自动向下换行继续流动，但是当内联元素出现很长的英文单词时，此单词则不会换行分开。
-* 如果希望换行可以在css中使用word-break:break-all 会把每个字都分开。
-</code></pre><h4 id="块级元素："><a href="#块级元素：" class="headerlink" title="块级元素："></a>块级元素：</h4><pre><code>* 每一个块都占一行，从上往下依次流动
-* 其高度又块级元素内部的文档流元素的高度总和决定
-</code></pre><h2 id="2-宽度是由什么决定的"><a href="#2-宽度是由什么决定的" class="headerlink" title="2 宽度是由什么决定的"></a>2 宽度是由什么决定的</h2><p>块级元素的宽度是100%；</p>
-<p>而内联元素则是根据其自身的内容或子元素来决定其宽度。</p>
-<h2 id="3-line-box"><a href="#3-line-box" class="headerlink" title="3 line-box"></a>3 line-box</h2><blockquote>
-<p>此处引自 mooonx <a href="https://segmentfault.com/a/1190000005155084" target="_blank" rel="noopener">想要清晰的明白（二）CSS 盒模型Block box与Line box</a></p>
-</blockquote>
-<p>每一行称为一条Line Box，它又是由这一行的许多inline-box组成，它的高度可以直接由line-height决定，line boxes的高度垂直堆叠形成了containing box的高度，就是我们见到的div或是p标签之类的高度了。</p>
-<h4 id="匿名文本"><a href="#匿名文本" class="headerlink" title="匿名文本"></a>匿名文本</h4><pre><code>&lt;div&gt;当你只有一把锤子&lt;span&gt;一切看起来&lt;/span&gt;都像是颗钉子&lt;/div&gt;
-
-未包含在行内元素的字符串（当你只有一把锤子，都像颗钉子）就叫匿名文本
-</code></pre><h4 id="内容区-行内框-间距"><a href="#内容区-行内框-间距" class="headerlink" title="内容区 行内框 间距"></a>内容区 行内框 间距</h4><p><img src="/blog/images/line-box.png"><br><strong>内容区</strong></p>
-<p>css假设每个元素都会生成一个或者多个Box，称为元素框，元素框中心有内容区，内容区外周围包括了padding，border，margin，但是，替换元素是包括外边距，内边距，边框的。</p>
-<p><strong>行间距</strong></p>
-<p>行间距是font-size与line-height的差值，被分成两半在内容区的上下</p>
-<p><strong>行内框</strong></p>
-<p>非替换元素，行内框高度=line-height</p>
-<p>替换元素，行内框高度=内容区宽度（行间距不应用到替换元素）</p>
-<p><strong>行高</strong></p>
-<p>两行文字基线的距离</p>
-<p><strong>行框</strong></p>
-<p>一行有很多行内框，行框是包含这一行行内框最高点和最低点的</p>
-<p><strong>基线</strong></p>
-<p>不同元素的基线位置不同，整个行框会有一个基线，行内元素的位置是基于两者基线对齐</p>
-<h2 id="4盒模型"><a href="#4盒模型" class="headerlink" title="4盒模型"></a>4盒模型</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model" target="_blank" rel="noopener">盒模型</a></p>
-<h4 id="关于盒模型-mdn是这样定义的："><a href="#关于盒模型-mdn是这样定义的：" class="headerlink" title="关于盒模型 mdn是这样定义的："></a>关于盒模型 mdn是这样定义的：</h4><p>在一个文档中，每个元素都被表示为一个矩形的盒子。确定这些盒子的尺寸, 属性 — 像它的颜色，背景，边框方面 — 和位置是渲染引擎的目标。</p>
-<p>需要记住的是：”every element in web design is a rectangular box”。如图：<br><img src="/blog/box-demo.png" alt="box-model"></p>
-<p>CSS3中新增了一种盒模型计算方式：box-sizing 盒模型默认的值是content-box, 新增的值是padding-box和border-box，几种盒模型计算元素宽高的区别如下：</p>
-<h4 id="content-box（默认）"><a href="#content-box（默认）" class="headerlink" title="content-box（默认）"></a>content-box（默认）</h4><p><strong>布局所占宽度Width：</strong></p>
-<p>Width = width + padding-left + padding-right + border-left + border-right</p>
-<p><strong>布局所占高度Height:</strong></p>
-<p>Height = height + padding-top + padding-bottom + border-top + border-bottom</p>
-<h4 id="padding-box"><a href="#padding-box" class="headerlink" title="padding-box"></a>padding-box</h4><p><strong>布局所占宽度Width：</strong></p>
-<p>Width = width(包含padding-left + padding-right) + border-top + border-bottom</p>
-<p><strong>布局所占高度Height:</strong></p>
-<p>Height = height(包含padding-top + padding-bottom) + border-top + border-bottom</p>
-<h4 id="border-box"><a href="#border-box" class="headerlink" title="border-box"></a>border-box</h4><p><strong>布局所占宽度Width：</strong></p>
-<p>Width = width(包含padding-left + padding-right + border-left + border-right)</p>
-<p><strong>布局所占高度Height:</strong></p>
-<p>Height = height(包含padding-top + padding-bottom + border-top + border-bottom)</p>
-<h3 id="margin叠加"><a href="#margin叠加" class="headerlink" title="margin叠加"></a>margin叠加</h3><p>外边距叠加是一个相当简单的概念。 </p>
-<p>简单的说，当两个或更多个垂直边距相遇时，它们将形成一个外边距。这个外边距的高度等于两个发生叠加的外边距的高度中的较大者。</p>
-<p>####但是注意只有普通文档流中块框的垂直外边距才会发生外边距叠加。 行内框、 浮动框或绝对定位框之间的外边距不会叠加。</p>
-<h4 id="一般来说，-垂直外边距叠加有三种情况："><a href="#一般来说，-垂直外边距叠加有三种情况：" class="headerlink" title="一般来说， 垂直外边距叠加有三种情况："></a>一般来说， 垂直外边距叠加有三种情况：</h4><p><strong>元素自身叠加</strong></p>
-<p>当元素没有内容（即空元素）、内边距、边框时，它的上下边距就相遇了， 即会产生叠加（垂直方向）。当为元素添加内容、内边距、边框任何一项， 就会取消叠加。</p>
-<p><strong>相邻元素叠加</strong></p>
-<p>相邻的两个元素，如果它们的上下边距相遇，即会产生叠加。<br>包含（父子）元素叠加 包含元素的外边距父元素的内边距和边框， 当这两项都不存在的时候，父子元素垂直外边距相邻，产生叠加。添加任何一项即会取消叠加。</p>
+        <h2 id="一、Flex-布局是什么？"><a href="#一、Flex-布局是什么？" class="headerlink" title="一、Flex 布局是什么？"></a>一、Flex 布局是什么？</h2><h4 id="Flex：Flexible-Box-弹性布局。用来为盒状模型提供最大的灵活性；"><a href="#Flex：Flexible-Box-弹性布局。用来为盒状模型提供最大的灵活性；" class="headerlink" title="Flex：Flexible Box - 弹性布局。用来为盒状模型提供最大的灵活性；"></a>Flex：Flexible Box - 弹性布局。用来为盒状模型提供最大的灵活性；</h4><h4 id="任何一个容器都可以指定为Flex布局；"><a href="#任何一个容器都可以指定为Flex布局；" class="headerlink" title="任何一个容器都可以指定为Flex布局；"></a>任何一个容器都可以指定为Flex布局；</h4><a id="more"></a>
+<pre><code>.box{
+display: flex;    
+}
+</code></pre><h4 id="行内元素也可以使用Flex布局"><a href="#行内元素也可以使用Flex布局" class="headerlink" title="行内元素也可以使用Flex布局"></a>行内元素也可以使用Flex布局</h4><pre><code>.box{
+display: inline-flex;    
+}
+</code></pre><h4 id="Tips-设为Flex布局以后，子元素的float、clear和vertical-align属性将失效；"><a href="#Tips-设为Flex布局以后，子元素的float、clear和vertical-align属性将失效；" class="headerlink" title="Tips:设为Flex布局以后，子元素的float、clear和vertical-align属性将失效；"></a>Tips:设为Flex布局以后，子元素的float、clear和vertical-align属性将失效；</h4><h2 id="二、基本概念"><a href="#二、基本概念" class="headerlink" title="二、基本概念"></a>二、基本概念</h2><h4 id="采用Flex布局的元素，称为Flex容器。"><a href="#采用Flex布局的元素，称为Flex容器。" class="headerlink" title="采用Flex布局的元素，称为Flex容器。"></a>采用Flex布局的元素，称为Flex容器。</h4><h4 id="它的所有子元素自动称为容器成员，称为Flex项目。"><a href="#它的所有子元素自动称为容器成员，称为Flex项目。" class="headerlink" title="它的所有子元素自动称为容器成员，称为Flex项目。"></a>它的所有子元素自动称为容器成员，称为Flex项目。</h4><h2 id="三、容器的属性"><a href="#三、容器的属性" class="headerlink" title="三、容器的属性"></a>三、容器的属性</h2><p>一下6个属性可以设置在容器上：</p>
+<h3 id="1-flex-direction"><a href="#1-flex-direction" class="headerlink" title="1 - flex-direction"></a>1 - flex-direction</h3><h4 id="flex-direction-属性决定主轴方向（即项目的排列方向）。"><a href="#flex-direction-属性决定主轴方向（即项目的排列方向）。" class="headerlink" title="flex-direction 属性决定主轴方向（即项目的排列方向）。"></a>flex-direction 属性决定主轴方向（即项目的排列方向）。</h4><pre><code>.box{
+flex-direction: row | row-reverse | column | column-reverse
+}
+</code></pre><ul>
+<li>row（默认值）：主轴为水平方向，起点在左端。</li>
+<li>row-reverse：主轴为水平方向，起点在右端。</li>
+<li>column：主轴为垂直方向，起点在上沿。</li>
+<li>column-reverse：主轴为垂直方向，起点在下沿。</li>
+</ul>
+<h3 id="2-flex-wrap"><a href="#2-flex-wrap" class="headerlink" title="2 - flex-wrap"></a>2 - flex-wrap</h3><h4 id="flex-wrap-默认情况下，项目都排在一条线上，flex-wrap属性定义，如果一条轴线排不下，如何换行"><a href="#flex-wrap-默认情况下，项目都排在一条线上，flex-wrap属性定义，如果一条轴线排不下，如何换行" class="headerlink" title="flex-wrap : 默认情况下，项目都排在一条线上，flex-wrap属性定义，如果一条轴线排不下，如何换行"></a>flex-wrap : 默认情况下，项目都排在一条线上，flex-wrap属性定义，如果一条轴线排不下，如何换行</h4><pre><code>.box{
+  flex-wrap: nowrap | wrap | wrap-reverse;
+}
+</code></pre><ul>
+<li>nowrap(默认): 不换行；</li>
+<li>wrap: 换行，第一行在上方；</li>
+<li>wrap-reverse: 换行，第一行在下方；</li>
+</ul>
+<h3 id="3-flex-flow"><a href="#3-flex-flow" class="headerlink" title="3 - flex-flow"></a>3 - flex-flow</h3><h4 id="flex-flow-属性是-flex-derection属性和flex-wrap属性的简写形式，默认值为-row-nowarp；"><a href="#flex-flow-属性是-flex-derection属性和flex-wrap属性的简写形式，默认值为-row-nowarp；" class="headerlink" title="flex-flow 属性是 flex-derection属性和flex-wrap属性的简写形式，默认值为 row nowarp；"></a>flex-flow 属性是 flex-derection属性和flex-wrap属性的简写形式，默认值为 row nowarp；</h4><pre><code>.box {
+  flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;
+}
+</code></pre><h3 id="4-justify-content"><a href="#4-justify-content" class="headerlink" title="4 - justify-content"></a>4 - justify-content</h3><h4 id="justify-content属性定义了项目在主轴上的对齐方式"><a href="#justify-content属性定义了项目在主轴上的对齐方式" class="headerlink" title="justify-content属性定义了项目在主轴上的对齐方式"></a>justify-content属性定义了项目在主轴上的对齐方式</h4><pre><code>.box {
+  justify-content: flex-start | flex-end | center | space-between | space-around;
+}
+</code></pre><ul>
+<li>flex-start（默认值）：左对齐</li>
+<li>flex-end：右对齐</li>
+<li>center： 居中</li>
+<li>space-between：两端对齐，项目之间的间隔都相等。</li>
+<li>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。 </li>
+</ul>
+<h3 id="5-align-items"><a href="#5-align-items" class="headerlink" title="5 - align-items"></a>5 - align-items</h3><h4 id="aligh-items-属性定义项目在交叉轴上如何对齐；"><a href="#aligh-items-属性定义项目在交叉轴上如何对齐；" class="headerlink" title="aligh-items 属性定义项目在交叉轴上如何对齐；"></a>aligh-items 属性定义项目在交叉轴上如何对齐；</h4><pre><code>.box {
+  align-items: flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre><ul>
+<li>flex-start：交叉轴的起点对齐（上对齐）。</li>
+<li>flex-end：交叉轴的终点对齐（下对齐）。</li>
+<li>center：交叉轴的中点对齐。</li>
+<li>baseline: 项目的第一行文字的基线对齐。</li>
+<li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li>
+</ul>
+<h3 id="6-align-content"><a href="#6-align-content" class="headerlink" title="6 - align-content"></a>6 - align-content</h3><h4 id="align-content-属性定义了多根轴线的对齐方式，如果项目只有一根轴线，改属性不起作用；"><a href="#align-content-属性定义了多根轴线的对齐方式，如果项目只有一根轴线，改属性不起作用；" class="headerlink" title="align-content 属性定义了多根轴线的对齐方式，如果项目只有一根轴线，改属性不起作用；"></a>align-content 属性定义了多根轴线的对齐方式，如果项目只有一根轴线，改属性不起作用；</h4><pre><code>.box {
+  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+</code></pre><ul>
+<li>flex-start：与交叉轴的起点对齐。</li>
+<li>flex-end：与交叉轴的终点对齐。</li>
+<li>center：与交叉轴的中点对齐。</li>
+<li>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</li>
+<li>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</li>
+<li>stretch（默认值）：轴线占满整个交叉轴。</li>
+</ul>
+<h2 id="四、项目的属性"><a href="#四、项目的属性" class="headerlink" title="四、项目的属性"></a>四、项目的属性</h2><h3 id="以下6个属性可以设置在项目上；"><a href="#以下6个属性可以设置在项目上；" class="headerlink" title="以下6个属性可以设置在项目上；"></a>以下6个属性可以设置在项目上；</h3><h3 id="1-order"><a href="#1-order" class="headerlink" title="1 - order"></a>1 - order</h3><h4 id="order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0；"><a href="#order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0；" class="headerlink" title="order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0；"></a>order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0；</h4><h3 id="2-flex-grow"><a href="#2-flex-grow" class="headerlink" title="2 - flex-grow"></a>2 - flex-grow</h3><h4 id="flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。"><a href="#flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。" class="headerlink" title="flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。"></a>flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</h4><pre><code>.item {
+  flex-grow: &lt;number&gt;; /* default 0 */
+}
+</code></pre><p>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍；</p>
+<h3 id="3-flex-shrink"><a href="#3-flex-shrink" class="headerlink" title="3 - flex-shrink"></a>3 - flex-shrink</h3><h4 id="flex-shrink-属性定义了项目的缩小比例，默认为1，如果空间不足，该项目将缩小；"><a href="#flex-shrink-属性定义了项目的缩小比例，默认为1，如果空间不足，该项目将缩小；" class="headerlink" title="flex-shrink 属性定义了项目的缩小比例，默认为1，如果空间不足，该项目将缩小；"></a>flex-shrink 属性定义了项目的缩小比例，默认为1，如果空间不足，该项目将缩小；</h4><ul>
+<li><p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。</p>
+</li>
+<li><p>负值对该属性无效。</p>
+</li>
+</ul>
+<h3 id="4-flex-basis"><a href="#4-flex-basis" class="headerlink" title="4 - flex-basis"></a>4 - flex-basis</h3><h4 id="flex-basis-属性定义了在分配多余空间之前，项目占据的主轴空间。浏览器根据这个属性，计算十周是否有多余空间；它的默认值为auto，即项目的本来大小；"><a href="#flex-basis-属性定义了在分配多余空间之前，项目占据的主轴空间。浏览器根据这个属性，计算十周是否有多余空间；它的默认值为auto，即项目的本来大小；" class="headerlink" title="flex-basis 属性定义了在分配多余空间之前，项目占据的主轴空间。浏览器根据这个属性，计算十周是否有多余空间；它的默认值为auto，即项目的本来大小；"></a>flex-basis 属性定义了在分配多余空间之前，项目占据的主轴空间。浏览器根据这个属性，计算十周是否有多余空间；它的默认值为auto，即项目的本来大小；</h4><pre><code>.item {
+  flex-basis: &lt;length&gt; | auto; /* default auto */
+}
+</code></pre><p>它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。</p>
+<h3 id="5-flex"><a href="#5-flex" class="headerlink" title="5 - flex"></a>5 - flex</h3><h4 id="flex属性是flex-grow，flex-shrink和flex-basis的简写，默认值是-0-1-auto。后面两个属性可选；"><a href="#flex属性是flex-grow，flex-shrink和flex-basis的简写，默认值是-0-1-auto。后面两个属性可选；" class="headerlink" title="flex属性是flex-grow，flex-shrink和flex-basis的简写，默认值是 0 1 auto。后面两个属性可选；"></a>flex属性是flex-grow，flex-shrink和flex-basis的简写，默认值是 0 1 auto。后面两个属性可选；</h4><pre><code>.item {
+  flex: none | [ &lt;&apos;flex-grow&apos;&gt; &lt;&apos;flex-shrink&apos;&gt; || &lt;&apos;flex-basis&apos;&gt; ]
+}
+</code></pre><p>该属性有两个快捷值：auto（1 1 auto）和none（0 0 auto）<br>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值；</p>
+<h3 id="6-align-self"><a href="#6-align-self" class="headerlink" title="6 - align-self"></a>6 - align-self</h3><h4 id="align-self属性允许单个项目有与其它项目不一样的对齐方式，可覆盖align-items属性。默认值是auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch；"><a href="#align-self属性允许单个项目有与其它项目不一样的对齐方式，可覆盖align-items属性。默认值是auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch；" class="headerlink" title="align-self属性允许单个项目有与其它项目不一样的对齐方式，可覆盖align-items属性。默认值是auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch；"></a>align-self属性允许单个项目有与其它项目不一样的对齐方式，可覆盖align-items属性。默认值是auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch；</h4><pre><code>.item {
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre><p>该属性可能取6个值，除了auto，其他都与align-items属性完全一致。</p>
 
       
     </div>
@@ -460,7 +485,7 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/css/" rel="tag"># css</a>
+            <a href="/blog/tags/布局/" rel="tag"># 布局</a>
           
         </div>
       
@@ -473,8 +498,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/02/26/git常用命令/" rel="next" title="git常用命令">
-                <i class="fa fa-chevron-left"></i> git常用命令
+              <a href="/blog/2018/02/28/我对于css布局与定位的理解-1/" rel="next" title="我对于css布局与定位的理解 2">
+                <i class="fa fa-chevron-left"></i> 我对于css布局与定位的理解 2
               </a>
             
           </div>
@@ -482,10 +507,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2018/02/28/2/" rel="prev" title="2">
-                2 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -673,7 +694,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-高度是由什么决定的"><span class="nav-number">1.</span> <span class="nav-text">1 高度是由什么决定的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素"><span class="nav-number">1.1.</span> <span class="nav-text">内联元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级元素"><span class="nav-number">1.2.</span> <span class="nav-text">块级元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是文档流？"><span class="nav-number">1.2.1.</span> <span class="nav-text">- 什么是文档流？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内联元素："><span class="nav-number">1.2.2.</span> <span class="nav-text">内联元素：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#块级元素："><span class="nav-number">1.2.3.</span> <span class="nav-text">块级元素：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-宽度是由什么决定的"><span class="nav-number">2.</span> <span class="nav-text">2 宽度是由什么决定的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-line-box"><span class="nav-number">3.</span> <span class="nav-text">3 line-box</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#匿名文本"><span class="nav-number">3.0.1.</span> <span class="nav-text">匿名文本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内容区-行内框-间距"><span class="nav-number">3.0.2.</span> <span class="nav-text">内容区 行内框 间距</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4盒模型"><span class="nav-number">4.</span> <span class="nav-text">4盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关于盒模型-mdn是这样定义的："><span class="nav-number">4.0.1.</span> <span class="nav-text">关于盒模型 mdn是这样定义的：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#content-box（默认）"><span class="nav-number">4.0.2.</span> <span class="nav-text">content-box（默认）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#padding-box"><span class="nav-number">4.0.3.</span> <span class="nav-text">padding-box</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#border-box"><span class="nav-number">4.0.4.</span> <span class="nav-text">border-box</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#margin叠加"><span class="nav-number">4.1.</span> <span class="nav-text">margin叠加</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一般来说，-垂直外边距叠加有三种情况："><span class="nav-number">4.1.1.</span> <span class="nav-text">一般来说， 垂直外边距叠加有三种情况：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Flex-布局是什么？"><span class="nav-number">1.</span> <span class="nav-text">一、Flex 布局是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Flex：Flexible-Box-弹性布局。用来为盒状模型提供最大的灵活性；"><span class="nav-number">1.0.1.</span> <span class="nav-text">Flex：Flexible Box - 弹性布局。用来为盒状模型提供最大的灵活性；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#任何一个容器都可以指定为Flex布局；"><span class="nav-number">1.0.2.</span> <span class="nav-text">任何一个容器都可以指定为Flex布局；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#行内元素也可以使用Flex布局"><span class="nav-number">1.0.3.</span> <span class="nav-text">行内元素也可以使用Flex布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips-设为Flex布局以后，子元素的float、clear和vertical-align属性将失效；"><span class="nav-number">1.0.4.</span> <span class="nav-text">Tips:设为Flex布局以后，子元素的float、clear和vertical-align属性将失效；</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、基本概念"><span class="nav-number">2.</span> <span class="nav-text">二、基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#采用Flex布局的元素，称为Flex容器。"><span class="nav-number">2.0.1.</span> <span class="nav-text">采用Flex布局的元素，称为Flex容器。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#它的所有子元素自动称为容器成员，称为Flex项目。"><span class="nav-number">2.0.2.</span> <span class="nav-text">它的所有子元素自动称为容器成员，称为Flex项目。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、容器的属性"><span class="nav-number">3.</span> <span class="nav-text">三、容器的属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-flex-direction"><span class="nav-number">3.1.</span> <span class="nav-text">1 - flex-direction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-direction-属性决定主轴方向（即项目的排列方向）。"><span class="nav-number">3.1.1.</span> <span class="nav-text">flex-direction 属性决定主轴方向（即项目的排列方向）。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-flex-wrap"><span class="nav-number">3.2.</span> <span class="nav-text">2 - flex-wrap</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-wrap-默认情况下，项目都排在一条线上，flex-wrap属性定义，如果一条轴线排不下，如何换行"><span class="nav-number">3.2.1.</span> <span class="nav-text">flex-wrap : 默认情况下，项目都排在一条线上，flex-wrap属性定义，如果一条轴线排不下，如何换行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-flex-flow"><span class="nav-number">3.3.</span> <span class="nav-text">3 - flex-flow</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-flow-属性是-flex-derection属性和flex-wrap属性的简写形式，默认值为-row-nowarp；"><span class="nav-number">3.3.1.</span> <span class="nav-text">flex-flow 属性是 flex-derection属性和flex-wrap属性的简写形式，默认值为 row nowarp；</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-justify-content"><span class="nav-number">3.4.</span> <span class="nav-text">4 - justify-content</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#justify-content属性定义了项目在主轴上的对齐方式"><span class="nav-number">3.4.1.</span> <span class="nav-text">justify-content属性定义了项目在主轴上的对齐方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-align-items"><span class="nav-number">3.5.</span> <span class="nav-text">5 - align-items</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#aligh-items-属性定义项目在交叉轴上如何对齐；"><span class="nav-number">3.5.1.</span> <span class="nav-text">aligh-items 属性定义项目在交叉轴上如何对齐；</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-align-content"><span class="nav-number">3.6.</span> <span class="nav-text">6 - align-content</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#align-content-属性定义了多根轴线的对齐方式，如果项目只有一根轴线，改属性不起作用；"><span class="nav-number">3.6.1.</span> <span class="nav-text">align-content 属性定义了多根轴线的对齐方式，如果项目只有一根轴线，改属性不起作用；</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、项目的属性"><span class="nav-number">4.</span> <span class="nav-text">四、项目的属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#以下6个属性可以设置在项目上；"><span class="nav-number">4.1.</span> <span class="nav-text">以下6个属性可以设置在项目上；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-order"><span class="nav-number">4.2.</span> <span class="nav-text">1 - order</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0；"><span class="nav-number">4.2.1.</span> <span class="nav-text">order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0；</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-flex-grow"><span class="nav-number">4.3.</span> <span class="nav-text">2 - flex-grow</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。"><span class="nav-number">4.3.1.</span> <span class="nav-text">flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-flex-shrink"><span class="nav-number">4.4.</span> <span class="nav-text">3 - flex-shrink</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-shrink-属性定义了项目的缩小比例，默认为1，如果空间不足，该项目将缩小；"><span class="nav-number">4.4.1.</span> <span class="nav-text">flex-shrink 属性定义了项目的缩小比例，默认为1，如果空间不足，该项目将缩小；</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-flex-basis"><span class="nav-number">4.5.</span> <span class="nav-text">4 - flex-basis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-basis-属性定义了在分配多余空间之前，项目占据的主轴空间。浏览器根据这个属性，计算十周是否有多余空间；它的默认值为auto，即项目的本来大小；"><span class="nav-number">4.5.1.</span> <span class="nav-text">flex-basis 属性定义了在分配多余空间之前，项目占据的主轴空间。浏览器根据这个属性，计算十周是否有多余空间；它的默认值为auto，即项目的本来大小；</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-flex"><span class="nav-number">4.6.</span> <span class="nav-text">5 - flex</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flex属性是flex-grow，flex-shrink和flex-basis的简写，默认值是-0-1-auto。后面两个属性可选；"><span class="nav-number">4.6.1.</span> <span class="nav-text">flex属性是flex-grow，flex-shrink和flex-basis的简写，默认值是 0 1 auto。后面两个属性可选；</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-align-self"><span class="nav-number">4.7.</span> <span class="nav-text">6 - align-self</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#align-self属性允许单个项目有与其它项目不一样的对齐方式，可覆盖align-items属性。默认值是auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch；"><span class="nav-number">4.7.1.</span> <span class="nav-text">align-self属性允许单个项目有与其它项目不一样的对齐方式，可覆盖align-items属性。默认值是auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch；</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -843,9 +864,9 @@ var jiathis_config={
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/02/28/我对于css布局与定位的理解/';
-          this.page.identifier = '2018/02/28/我对于css布局与定位的理解/';
-          this.page.title = '我对于css布局与定位的理解 1';
+          this.page.url = 'http://yoursite.com/2018/02/28/flex布局/';
+          this.page.identifier = '2018/02/28/flex布局/';
+          this.page.title = 'flex布局';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://lee.disqus.com/embed.js';
