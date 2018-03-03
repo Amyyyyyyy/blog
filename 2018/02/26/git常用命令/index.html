@@ -40,7 +40,7 @@
 
   
   
-  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -48,21 +48,21 @@
 
 
 
-<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
@@ -99,7 +99,7 @@
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/blog/',
+    root: '/',
     scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
@@ -156,7 +156,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/blog/"  class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">amy</span>
         <span class="logo-line-after"><i></i></span>
@@ -184,7 +184,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/blog/" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -194,7 +194,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/blog/tags/" rel="section">
+          <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -204,7 +204,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/blog/categories/" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -214,7 +214,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/blog/archives/" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -289,12 +289,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/2018/02/26/git常用命令/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/26/git常用命令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="amy">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/pig.jpeg">
+      <meta itemprop="image" content="/images/pig.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -341,7 +341,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/git/" itemprop="url" rel="index">
+                  <a href="/categories/git/" itemprop="url" rel="index">
                     <span itemprop="name">git</span>
                   </a>
                 </span>
@@ -359,7 +359,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/blog/2018/02/26/git常用命令/#comments" itemprop="discussionUrl">
+                <a href="/2018/02/26/git常用命令/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="2018/02/26/git常用命令/" itemprop="commentCount"></span>
                 </a>
@@ -461,7 +461,7 @@ git config --global core.editor &quot;vim&quot;
 <li>再再次运行 git status -sb，发现没有文件变动了，这是因为文件的变动已经记录在仓库里了。</li>
 <li><p>这时你可以使用 git log 就可以看到历史上的变动：</p>
 <p> commit f0d95058cd32a332b98967f6c0a701c64a00810a</p>
-<p> Author: frankfang <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#102;&#114;&#97;&#x6e;&#107;&#x66;&#97;&#110;&#x67;&#x31;&#x39;&#57;&#x30;&#64;&#103;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#x6d;">&#102;&#114;&#97;&#x6e;&#107;&#x66;&#97;&#110;&#x67;&#x31;&#x39;&#57;&#x30;&#64;&#103;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#x6d;</a></p>
+<p> Author: frankfang <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x66;&#x72;&#x61;&#x6e;&#x6b;&#x66;&#97;&#x6e;&#x67;&#49;&#x39;&#x39;&#x30;&#x40;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;">&#x66;&#x72;&#x61;&#x6e;&#x6b;&#x66;&#97;&#x6e;&#x67;&#49;&#x39;&#x39;&#x30;&#x40;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;</a></p>
 <p> Date:   Thu Sep 28 22:30:43 2017 +0800</p>
 </li>
 </ol>
@@ -504,7 +504,7 @@ git config --global core.editor &quot;vim&quot;
       
         <div class="post-tags">
           
-            <a href="/blog/tags/git/" rel="tag"># git</a>
+            <a href="/tags/git/" rel="tag"># git</a>
           
         </div>
       
@@ -517,7 +517,7 @@ git config --global core.editor &quot;vim&quot;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/02/26/关于html一些标签，我的理解/" rel="next" title="关于html一些标签，我的理解">
+              <a href="/2018/02/26/关于html一些标签，我的理解/" rel="next" title="关于html一些标签，我的理解">
                 <i class="fa fa-chevron-left"></i> 关于html一些标签，我的理解
               </a>
             
@@ -527,7 +527,7 @@ git config --global core.editor &quot;vim&quot;
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/02/28/我对于css布局与定位的理解/" rel="prev" title="我对于css布局与定位的理解 1">
+              <a href="/2018/02/28/我对于css布局与定位的理解/" rel="prev" title="我对于css布局与定位的理解 1">
                 我对于css布局与定位的理解 1 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -632,7 +632,7 @@ var jiathis_config={
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/blog/images/pig.jpeg"
+                src="/images/pig.jpeg"
                 alt="amy" />
             
               <p class="site-author-name" itemprop="name">amy</p>
@@ -644,7 +644,7 @@ var jiathis_config={
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/blog/archives/">
+                <a href="/archives/">
               
                   <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
@@ -656,7 +656,7 @@ var jiathis_config={
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/blog/categories/index.html">
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
@@ -667,7 +667,7 @@ var jiathis_config={
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/blog/tags/index.html">
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
@@ -816,62 +816,62 @@ var jiathis_config={
 
   
   
-    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
   
 
   
   
-    <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   
 
   
   
-    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
   
   
-    <script type="text/javascript" src="/blog/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
-
-
-  
-
-
-  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
-
 
 
   
 
 
-  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -937,7 +937,7 @@ var jiathis_config={
     } else if (/json$/i.test(search_path)) {
       isXml = false;
     }
-    var path = "/blog/" + search_path;
+    var path = "/" + search_path;
     // monitor main search box;
 
     var onPopupClose = function (e) {
