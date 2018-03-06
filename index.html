@@ -286,6 +286,215 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://rudy-zhang.me/2018/03/06/package-json文件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="amy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/pig.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="amy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/06/package-json文件/" itemprop="url">package.json文件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-06T16:38:50+08:00">
+                2018-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/06/package-json文件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/06/package-json文件/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近组里的师傅布置看了项目的源代码，然后发现对package.json这个文件不是很了解，于是看了阮一峰的博客，嘿嘿，以下是我的一点笔记：</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>每个项目的根目录下面，一般都有一个package.json文件，定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。</p>
+<p>一个最简单的package.json文件，只定义两项元数据:项目名称和项目版本：<br>    {<br>    “name”: “xxx”,<br>    “version”: “0.0.0”<br>    }</p>
+<p>package.json文件就是一个JSON对象，该对象的每一个成员就是当前项目的一项设置。比如name就是项目名称，version是版本（遵守“大版本.次要版本.小版本”的格式）。</p>
+<h2 id="package-json文件的各个字段。"><a href="#package-json文件的各个字段。" class="headerlink" title="package.json文件的各个字段。"></a>package.json文件的各个字段。</h2><h3 id="scripts-字段"><a href="#scripts-字段" class="headerlink" title="scripts 字段"></a>scripts 字段</h3><p>scripts 制定了运行脚本命令的npm命令行缩写，比如start指定了运行npm run start时，所要执行的命令。</p>
+<h3 id="dependencie-devDependencies字段"><a href="#dependencie-devDependencies字段" class="headerlink" title="dependencie,devDependencies字段"></a>dependencie,devDependencies字段</h3><p>它们都指向一个对象。该对象的各个成员，分别由模块名和对应的版本要求组成，表示依赖的模块及其版本范围。</p>
+<pre><code>{
+  &quot;devDependencies&quot;: {
+    &quot;browserify&quot;: &quot;~13.0.0&quot;,
+     &quot;karma-browserify&quot;: &quot;~5.0.1&quot;
+}
+}    
+</code></pre><ul>
+<li><p>指定版本：比如1.2.2，遵循“大版本.次要版本.小版本”的格式规定，安装时只安装指定版本。</p>
+</li>
+<li><p>波浪号（tilde）+指定版本：比如~1.2.2，表示安装1.2.x的最新版本（不低于1.2.2），但是不安装1.3.x，也就是说安装时不改变大版本号和次要版本号。</p>
+</li>
+<li><p>插入号（caret）+指定版本：比如ˆ1.2.2，表示安装1.x.x的最新版本（不低于1.2.2），但是不安装2.x.x，也就是说安装时不改变大版本号。需要注意的是，如果大版本号为0，则插入号的行为与波浪号相同，这是因为此时处于开发阶段，即使是次要版本号变动，也可能带来程序的不兼容。<br>latest：安装最新版本。</p>
+</li>
+</ul>
+<p>package.json文件可以手工编写，也可以使用npm init命令自动生成。</p>
+<p>这个命令采用互动方式，要求用户回答一些问题，然后在当前目录生成一个基本的package.json文件。所有问题之中，只有项目名称（name）和项目版本（version）是必填的，其他都是选填的。</p>
+<p>有了package.json文件，直接使用npm install命令，就会在当前目录中安装所需要的模块。</p>
+<p>如果一个模块不在package.json文件之中，可以单独安装这个模块，并使用相应的参数，将其写入package.json文件之中。<br>    $ npm install express –save<br>    $ npm install express –save-dev</p>
+<p>上面代码表示单独安装express模块，–save参数表示将该模块写入dependencies属性，–save-dev表示将该模块写入devDependencies属性。</p>
+<h3 id="peerDependencies"><a href="#peerDependencies" class="headerlink" title="peerDependencies"></a>peerDependencies</h3><p>有时，你的项目和所依赖的模块，都会同时依赖另一个模块，但是所依赖的版本不一样。比如，你的项目依赖A模块和B模块的1.0版，而A模块本身又依赖B模块的2.0版。</p>
+<p>大多数情况下，这不构成问题，B模块的两个版本可以并存，同时运行。但是，有一种情况，会出现问题，就是这种依赖关系将暴露给用户。</p>
+<p>最典型的场景就是插件，比如A模块是B模块的插件。用户安装的B模块是1.0版本，但是A插件只能和2.0版本的B模块一起使用。这时，用户要是将1.0版本的B的实例传给A，就会出现问题。因此，需要一种机制，在模板安装的时候提醒用户，如果A和B一起安装，那么B必须是2.0模块。</p>
+<p>peerDependencies字段，就是用来供插件指定其所需要的主工具的版本。<br>    {<br>      “name”: “chai-as-promised”,<br>      “peerDependencies”: {<br>        “chai”: “1.x”<br>      }<br>    }</p>
+<p>上面代码指定，安装chai-as-promised模块时，主程序chai必须一起安装，而且chai的版本必须是1.x。如果你的项目指定的依赖是chai的2.0版本，就会报错。</p>
+<p>注意，从npm 3.0版开始，peerDependencies不再会默认安装了。</p>
+<h3 id="bin"><a href="#bin" class="headerlink" title="bin"></a>bin</h3><p>bin项用来指定各个内部命令对应的可执行文件的位置。</p>
+<pre><code>&quot;bin&quot;: {
+  &quot;someTool&quot;: &quot;./bin/someTool.js&quot;
+}
+</code></pre><p>上面代码指定，someTool 命令对应的可执行文件为 bin 子目录下的 someTool.js。Npm会寻找这个文件，在node_modules/.bin/目录下建立符号链接。在上面的例子中，someTool.js会建立符号链接npm_modules/.bin/someTool。由于node_modules/.bin/目录会在运行时加入系统的PATH变量，因此在运行npm时，就可以不带路径，直接通过命令来调用这些脚本。</p>
+<p>因此，像下面这样的写法可以采用简写。<br>    scripts: {<br>      start: ‘./node_modules/someTool/someTool.js build’<br>    }</p>
+<p>// 简写为</p>
+<pre><code>scripts: {  
+  start: &apos;someTool build&apos;
+}
+</code></pre><p>所有node_modules/.bin/目录下的命令，都可以用npm run [命令]的格式运行。在命令行下，键入npm run，然后按tab键，就会显示所有可以使用的命令。</p>
+<h3 id="main字段"><a href="#main字段" class="headerlink" title="main字段"></a>main字段</h3><p>main字段指定了加载的入口文件，require(‘moduleName’)就会加载这个文件。这个字段的默认值是模块根目录下面的index.js。</p>
+<h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><p>config字段用于添加命令行的环境变量。<br>下面是一个package.json文件。</p>
+<pre><code>{  
+  &quot;name&quot; : &quot;foo&quot;,
+  &quot;config&quot; : { &quot;port&quot; : &quot;8080&quot; },
+ &quot;scripts&quot; : { &quot;start&quot; : &quot;node server.js&quot; }
+}
+</code></pre><p>然后，在server.js脚本就可以引用config字段的值。</p>
+<pre><code>http
+  .createServer(...)
+  .listen(process.env.npm_package_config_port)
+</code></pre><p>用户执行npm run start命令时，这个脚本就可以得到值。</p>
+<pre><code>$ npm run start
+</code></pre><p>用户可以改变这个值。</p>
+<pre><code>$ npm config set foo:port 80
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://rudy-zhang.me/2018/03/04/算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1737,145 +1946,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://rudy-zhang.me/2018/02/23/使用hexo-gitpages搭建博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="amy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/pig.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="amy">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/23/使用hexo-gitpages搭建博客/" itemprop="url">使用hexo+gitpages搭建博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-23T16:01:53+08:00">
-                2018-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/02/23/使用hexo-gitpages搭建博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/02/23/使用hexo-gitpages搭建博客/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="嘿嘿-最近学习了用hexo搭建博客-下面是本萌新的一些些经验"><a href="#嘿嘿-最近学习了用hexo搭建博客-下面是本萌新的一些些经验" class="headerlink" title="嘿嘿 最近学习了用hexo搭建博客 下面是本萌新的一些些经验~"></a>嘿嘿 最近学习了用hexo搭建博客 下面是本萌新的一些些经验~</h3><h5 id="注：我用的是mac系统"><a href="#注：我用的是mac系统" class="headerlink" title="注：我用的是mac系统"></a>注：我用的是mac系统</h5><hr>
-<p>以下是我安装的一些步骤：<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/23/使用hexo-gitpages搭建博客/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1923,7 +2000,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1934,7 +2011,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1945,7 +2022,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
