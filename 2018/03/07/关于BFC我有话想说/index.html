@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="BFC," />
 
 
 
@@ -79,16 +79,21 @@
 
 
 
-<meta name="description" content="welcome to my blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="amy">
-<meta property="og:url" content="http://rudy-zhang.me/tags/css/index.html">
+<meta name="description" content="尝试理解BFC以前一直对BFC理解得很模糊，然后最近又去重新了解了下谷歌一搜关键词，几乎全是冲着对BFC定义来的，然鹅，并看不懂啊，汗颜。于是就根据MDN里面的BFC一些特性自己写了些样式试了下，有一句话真的说得很好，I KNOW IT WHEN I SEE IT意思就是只有我试了，我才理解了，这个BFC到底是个什么鬼东西。 以下是过程(哭泣脸):">
+<meta name="keywords" content="BFC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于BFC我有一点理解">
+<meta property="og:url" content="http://rudy-zhang.me/2018/03/07/关于BFC我有话想说/index.html">
 <meta property="og:site_name" content="amy">
-<meta property="og:description" content="welcome to my blog">
+<meta property="og:description" content="尝试理解BFC以前一直对BFC理解得很模糊，然后最近又去重新了解了下谷歌一搜关键词，几乎全是冲着对BFC定义来的，然鹅，并看不懂啊，汗颜。于是就根据MDN里面的BFC一些特性自己写了些样式试了下，有一句话真的说得很好，I KNOW IT WHEN I SEE IT意思就是只有我试了，我才理解了，这个BFC到底是个什么鬼东西。 以下是过程(哭泣脸):">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://rudy-zhang.me/images/BFC.png">
+<meta property="og:image" content="http://rudy-zhang.me/images/no-BFC.png">
+<meta property="og:updated_time" content="2018-03-07T14:58:21.423Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="amy">
-<meta name="twitter:description" content="welcome to my blog">
+<meta name="twitter:title" content="关于BFC我有一点理解">
+<meta name="twitter:description" content="尝试理解BFC以前一直对BFC理解得很模糊，然后最近又去重新了解了下谷歌一搜关键词，几乎全是冲着对BFC定义来的，然鹅，并看不懂啊，汗颜。于是就根据MDN里面的BFC一些特性自己写了些样式试了下，有一句话真的说得很好，I KNOW IT WHEN I SEE IT意思就是只有我试了，我才理解了，这个BFC到底是个什么鬼东西。 以下是过程(哭泣脸):">
+<meta name="twitter:image" content="http://rudy-zhang.me/images/BFC.png">
 
 
 
@@ -118,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://rudy-zhang.me/tags/css/"/>
+  <link rel="canonical" href="http://rudy-zhang.me/2018/03/07/关于BFC我有话想说/"/>
 
 
 
 
 
-  <title>标签: css | amy</title>
+  <title>关于BFC我有一点理解 | amy</title>
   
 
 
@@ -143,7 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -271,82 +276,234 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>css<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://rudy-zhang.me/2018/03/07/关于BFC我有话想说/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="amy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/pig.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="amy">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/02/28/我对于css布局与定位的理解-1/" itemprop="url">
-              
-                <span itemprop="name">我对于css布局与定位的理解 2</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">关于BFC我有一点理解</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-28T14:08:13+08:00"
-              content="2018-02-28" >
-          02-28
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T22:16:47+08:00">
+                2018-03-07
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/share/" itemprop="url" rel="index">
+                    <span itemprop="name">share</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/07/关于BFC我有话想说/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/07/关于BFC我有话想说/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/28/我对于css布局与定位的理解/" itemprop="url">
-              
-                <span itemprop="name">我对于css布局与定位的理解 1</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-28T10:35:55+08:00"
-              content="2018-02-28" >
-          02-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <h2 id="尝试理解BFC"><a href="#尝试理解BFC" class="headerlink" title="尝试理解BFC"></a>尝试理解BFC</h2><p>以前一直对BFC理解得很模糊，然后最近又去重新了解了下<br>谷歌一搜关键词，几乎全是冲着对BFC定义来的，然鹅，并看不懂啊，汗颜。<br>于是就根据MDN里面的BFC一些特性自己写了些样式试了下，有一句话真的说得很好，I KNOW IT WHEN I SEE IT<br>意思就是只有我试了，我才理解了，这个BFC到底是个什么鬼东西。</p>
+<p>以下是过程(哭泣脸):<br><a id="more"></a><br>BFC: block formatting context – 快格式化上下文</p>
+<h3 id="MDN对BFC的定义：MDN"><a href="#MDN对BFC的定义：MDN" class="headerlink" title="MDN对BFC的定义：MDN"></a>MDN对BFC的定义：<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="noopener">MDN</a></h3><p>块格式化上下文（Block Formatting Context，BFC） 是Web页面的可视化CSS渲染的一部分，是布局过程中生成块级盒子的区域，也是浮动元素与其他元素的交互限定区域。</p>
+<p>下列方式会创建块格式化上下文：</p>
+<ul>
+<li>根元素或包含根元素的元素</li>
+<li>浮动元素（元素的 float 不是 none）</li>
+<li>绝对定位元素（元素的 position 为 absolute 或 fixed）</li>
+<li>行内块元素（元素的 display 为 inline-block）</li>
+<li>表格单元格（元素的 display为 table-cell，HTML表格单元格默认为该值）</li>
+<li>表格标题（元素的 display 为 table-caption，HTML表格标题默认为该值）</li>
+<li>匿名表格单元格元素（元素的 display为 table、table-row、 table-row-group、table-header-group、table-footer-group（分别是HTML table、row、tbody、thead、tfoot的默认属性）或 inline-table）</li>
+<li>overflow 值不为 visible 的块元素</li>
+<li>display 值为 flow-root 的元素</li>
+<li>contain 值为 layout、content或 strict 的元素</li>
+<li>弹性元素（display为 flex 或 inline-flex元素的直接子元素）</li>
+<li>网格元素（display为 grid 或 inline-grid 元素的直接子元素）</li>
+<li>多列容器（元素的 column-count 或 column-width 不为 auto，包括 column-count 为 1）</li>
+<li>column-span 为 all 的元素始终会创建一个新的BFC，即使该元素没有包裹在一个多列容器中（标准变更，Chrome bug）。</li>
+</ul>
+<p>创建了块格式化上下文的元素中的所有内容都会被包含到该BFC中。</p>
+<p>块格式化上下文对浮动定位（参见 float）与清除浮动（参见 clear）都很重要。浮动定位和清除浮动时只会应用于同一个BFC内的元素。浮动不会影响其它BFC中元素的布局，而清除浮动只能清除同一BFC中在它前面的元素的浮动。外边距折叠（Margin collapsing）也只会发生在属于同一BFC的块级元素之间。</p>
+<h3 id="but-看不懂啊写得奇奇怪怪的"><a href="#but-看不懂啊写得奇奇怪怪的" class="headerlink" title="but 看不懂啊写得奇奇怪怪的~"></a>but 看不懂啊写得奇奇怪怪的~</h3><p>于是 我就挑了上述几个方式试了下：<br>1 浮动元素会自动触发BFC<br>我定义了两个div 一个是爸爸一个是儿子<br>‘’’<br>    /<em> BFC就是可以直接把其内部的浮动元素包裹起来 </em>/<br>        .baba{<br>            border: 10px solid red;<br>            min-height: 10px;<br>            float: left;<br>        }<br>        /<em> 如果两个div在一个块中没有浮动，margin会合并 </em>/<br>        .baba .erzi{<br>            height: 100px;<br>            background:green;<br>            float: left;<br>            width: 400px;<br>            margin:10px;<br>        }<br>‘’’<br>加了浮动的效果：<br><img src="/images/BFC.png" alt="BFC.png"><br>没有加浮动的效果：<br><img src="/images/no-BFC.png" alt="no-bfc.png"></p>
+<p>很容易就看出区别了啊！<br>加了浮动的爸爸触发了BFC所以把儿子给包起来了，而没有加浮动的爸爸就管不到儿子啦。<br>我理解得是用以上mdn写出的所有方式触发了BFC之后，元素将会形成一个独立的块，不与外界有任何联系了，并且可以完整的包括所有浮动的儿子，这个功能我理解为：爸爸管儿子；嘿嘿嘿；</p>
+<p>但是！！<br>敲黑板！！<br>浮动的子元素也会触发BFC啊！<br>那么子元素里面的子元素该由谁管呢，当然由它的父级元素管啦，不再由爷爷辈元素管啦，官方含义的话，去看MDN的解释哦！<br>所以啊 mdn，css官方文档看不懂的话，就寄几去试吧</p>
+<p>并且我认为：BFC并没有定义，有的只是特性或者功能；类似于这种说法，我不知道什么是BFC,但是你写出样式，我就知道啦。</p>
+<h2 id="BFC与文档流又是啥关系呢"><a href="#BFC与文档流又是啥关系呢" class="headerlink" title="BFC与文档流又是啥关系呢"></a>BFC与文档流又是啥关系呢</h2><p>虽然一个元素触发了BFC 但是它里面仍然是有文档流的啦 只是这个元素的高度计算方式发生了改变而已，文档流并没有发生任何改变</p>
+<h2 id="我的理解来了"><a href="#我的理解来了" class="headerlink" title="我的理解来了"></a>我的理解来了</h2><p>我曾经看到过，有一些人用BFC去清除浮动，当时年少轻狂的我，觉得好厉害啊好神奇啊好牛逼啊，然鹅<br>理解了BFC之后 我？？？<br>为啥要这样清除浮动？？<br>clearfix不是很好吗？直接display：flex不是很好吗？<br>触发BFC要用到float啊visibility啊这样不是会发生很多bug吗？</p>
+<p>又看了很多博客的我回来了<br>目前我觉得正确的理解是： BFC 并不是给前端用的东西，而是给浏览器开发者用的东西，让浏览器开发者知道div的边界在naer如果实际开发中去刻意使用BFC，我觉得应该会出现很多问题吧，css应该会有更好的解决方案；</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/BFC/" rel="tag"># BFC</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/07/webpack入门/" rel="next" title="webpack入门">
+                <i class="fa fa-chevron-left"></i> webpack入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -354,6 +511,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -374,8 +545,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -455,6 +635,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#尝试理解BFC"><span class="nav-number">1.</span> <span class="nav-text">尝试理解BFC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MDN对BFC的定义：MDN"><span class="nav-number">1.1.</span> <span class="nav-text">MDN对BFC的定义：MDN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#but-看不懂啊写得奇奇怪怪的"><span class="nav-number">1.2.</span> <span class="nav-text">but 看不懂啊写得奇奇怪怪的~</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFC与文档流又是啥关系呢"><span class="nav-number">2.</span> <span class="nav-text">BFC与文档流又是啥关系呢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的理解来了"><span class="nav-number">3.</span> <span class="nav-text">我的理解来了</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -595,6 +791,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -612,6 +812,18 @@
       <script id="dsq-count-scr" src="https://lee.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://rudy-zhang.me/2018/03/07/关于BFC我有话想说/';
+          this.page.identifier = '2018/03/07/关于BFC我有话想说/';
+          this.page.title = '关于BFC我有一点理解';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://lee.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   

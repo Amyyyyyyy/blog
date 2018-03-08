@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="最近组里的师傅布置看了项目的源代码，然后发现对package.json这个文件不是很了解，于是看了阮一峰的博客，嘿嘿，以下是我的一点笔记： 概述每个项目的根目录下面，一般都有一个package.json文件，定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。 一个">
+<meta name="description" content="最近组里的师傅布置看了项目的源代码，然后发现对package.json这个文件不是很了解，于是看了阮一峰的博客，嘿嘿，以下是我的一点笔记： 概述每个项目的根目录下面，一般都有一个package.json文件，定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。">
 <meta name="keywords" content="javascript-package">
 <meta property="og:type" content="article">
 <meta property="og:title" content="package.json文件">
 <meta property="og:url" content="http://rudy-zhang.me/2018/03/06/package-json文件/index.html">
 <meta property="og:site_name" content="amy">
-<meta property="og:description" content="最近组里的师傅布置看了项目的源代码，然后发现对package.json这个文件不是很了解，于是看了阮一峰的博客，嘿嘿，以下是我的一点笔记： 概述每个项目的根目录下面，一般都有一个package.json文件，定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。 一个">
+<meta property="og:description" content="最近组里的师傅布置看了项目的源代码，然后发现对package.json这个文件不是很了解，于是看了阮一峰的博客，嘿嘿，以下是我的一点笔记： 概述每个项目的根目录下面，一般都有一个package.json文件，定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-06T13:48:32.221Z">
+<meta property="og:updated_time" content="2018-03-07T15:00:27.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="package.json文件">
-<meta name="twitter:description" content="最近组里的师傅布置看了项目的源代码，然后发现对package.json这个文件不是很了解，于是看了阮一峰的博客，嘿嘿，以下是我的一点笔记： 概述每个项目的根目录下面，一般都有一个package.json文件，定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。 一个">
+<meta name="twitter:description" content="最近组里的师傅布置看了项目的源代码，然后发现对package.json这个文件不是很了解，于是看了阮一峰的博客，嘿嘿，以下是我的一点笔记： 概述每个项目的根目录下面，一般都有一个package.json文件，定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。">
 
 
 
@@ -339,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/模块化开发/" itemprop="url" rel="index">
+                    <span itemprop="name">模块化开发</span>
                   </a>
                 </span>
 
@@ -388,8 +388,7 @@
 
       
         <p>最近组里的师傅布置看了项目的源代码，然后发现对package.json这个文件不是很了解，于是看了阮一峰的博客，嘿嘿，以下是我的一点笔记：</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>每个项目的根目录下面，一般都有一个package.json文件，定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。</p>
-<p>一个最简单的package.json文件，只定义两项元数据:项目名称和项目版本：<br>    {<br>    “name”: “xxx”,<br>    “version”: “0.0.0”<br>    }</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>每个项目的根目录下面，一般都有一个package.json文件，定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。<br><a id="more"></a><br>一个最简单的package.json文件，只定义两项元数据:项目名称和项目版本：<br>    {<br>    “name”: “xxx”,<br>    “version”: “0.0.0”<br>    }</p>
 <p>package.json文件就是一个JSON对象，该对象的每一个成员就是当前项目的一项设置。比如name就是项目名称，version是版本（遵守“大版本.次要版本.小版本”的格式）。</p>
 <h2 id="package-json文件的各个字段。"><a href="#package-json文件的各个字段。" class="headerlink" title="package.json文件的各个字段。"></a>package.json文件的各个字段。</h2><h3 id="scripts-字段"><a href="#scripts-字段" class="headerlink" title="scripts 字段"></a>scripts 字段</h3><p>scripts 制定了运行脚本命令的npm命令行缩写，比如start指定了运行npm run start时，所要执行的命令。</p>
 <h3 id="dependencie-devDependencies字段"><a href="#dependencie-devDependencies字段" class="headerlink" title="dependencie,devDependencies字段"></a>dependencie,devDependencies字段</h3><p>它们都指向一个对象。该对象的各个成员，分别由模块名和对应的版本要求组成，表示依赖的模块及其版本范围。</p>
@@ -603,7 +602,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -625,7 +624,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
