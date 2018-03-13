@@ -10,6 +10,8 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 <meta name="theme-color" content="#222">
 
 
@@ -88,7 +90,7 @@
 <meta property="og:description" content="为什么要使用WebPack 模块化，让我们可以把复杂的程序细化为小的文件; 类似于TypeScript这种在JavaScript基础上拓展的开发语言：使我们能够实现目前版本的JavaScript不能直接使用的特性，并且之后还能转换为JavaScript文件使浏览器可以识别； Scss，less等CSS预处理器…">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://rudy-zhang.me/images/webpack.jpg">
-<meta property="og:updated_time" content="2018-03-08T03:14:51.397Z">
+<meta property="og:updated_time" content="2018-03-10T02:02:46.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack入门">
 <meta name="twitter:description" content="为什么要使用WebPack 模块化，让我们可以把复杂的程序细化为小的文件; 类似于TypeScript这种在JavaScript基础上拓展的开发语言：使我们能够实现目前版本的JavaScript不能直接使用的特性，并且之后还能转换为JavaScript文件使浏览器可以识别； Scss，less等CSS预处理器…">
@@ -135,6 +137,16 @@
 
 
 
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?01284231c4469baa9eb33ad0cb8867f9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
 
 
 
@@ -149,7 +161,6 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
-
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -354,24 +365,44 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+                  <i class="fa fa-file-word-o"></i>
                 </span>
-                <a href="/2018/03/07/webpack入门/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/03/07/webpack入门/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,968
+                </span>
+              
 
-          
-          
+              
+                <span class="post-meta-divider">|</span>
+              
 
-          
-
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
           
 
           
@@ -541,10 +572,26 @@ ReactDOM.render(
 }
 </code></pre><h2 id="模块引入"><a href="#模块引入" class="headerlink" title="模块引入"></a>模块引入</h2><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>直接在页面引入 webpack 最终生成的页面脚本即可；</p>
 <h3 id="js"><a href="#js" class="headerlink" title="js"></a>js</h3><p>各脚本模块可以直接使用 commonJS 来书写，并可以直接引入未经编译的模块，比如 JSX、sass、coffee等（只要你在 webpack.config.js 里配置好了对应的加载器）。</p>
-<h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><p>webpack提供两个工具处理样式表，css-loader 和 style-loader，二者处理的任务不同，css-loader使你能够使用类似@import 和 url(…)的方法实现 require()的功能,style-loader将所有的计算后的样式加入页面中，二者组合在一起使你能够把样式表嵌入webpack打包后的JS文件中。<br>    //安装<br>    npm install –save-dev style-loader css-loader</p>
-<h3 id="CSS-module"><a href="#CSS-module" class="headerlink" title="CSS module"></a>CSS module</h3><p>模块使得开发者把复杂的代码转化为小的，干净的，依赖声明明确的单元，配合优化工具，依赖管理和加载管理可以自动完成。</p>
-<p>被称为CSS modules的技术意在把JS的模块化思想带入CSS中来，通过CSS模块，所有的类名，动画名默认都只作用于当前模块。Webpack对CSS模块化提供了非常好的支持，只需要在CSS loader中进行简单配置即可，然后就可以直接把CSS的类名传递到组件的代码中，这样做有效避免了全局污染。具体的代码如下<br>    {<br>        test: /.css$/,<br>        use: [<br>            {<br>                loader: “style-loader”<br>            }, {<br>                loader: “css-loader”,<br>                options: {<br>                    modules: true, // 指定启用css modules<br>                    localIdentName: ‘[name]__[local]–[hash:base64:5]’ // 指定css的类名格式<br>                }<br>            }<br>        ]<br>    }</p>
-<h2 id="loaders"><a href="#loaders" class="headerlink" title="loaders"></a>loaders</h2><p>通过使用不同的loader，webpack有能力调用外部的脚本或工具，实现对不同格式的文件的处理，比如说分析转换scss为css，或者把下一代的JS文件（ES6，ES7)转换为现代浏览器兼容的JS文件，对React的开发而言，合适的Loaders可以把React的中用到的JSX文件转换为JS文件。</p>
+<h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><p>webpack提供两个工具处理样式表，css-loader 和 style-loader，二者处理的任务不同，css-loader使你能够使用类似@import 和 url(…)的方法实现 require()的功能,style-loader将所有的计算后的样式加入页面中，二者组合在一起使你能够把样式表嵌入webpack打包后的JS文件中。</p>
+<pre><code>//安装
+npm install --save-dev style-loader css-loader
+</code></pre><h3 id="CSS-module"><a href="#CSS-module" class="headerlink" title="CSS module"></a>CSS module</h3><p>模块使得开发者把复杂的代码转化为小的，干净的，依赖声明明确的单元，配合优化工具，依赖管理和加载管理可以自动完成。</p>
+<p>被称为CSS modules的技术意在把JS的模块化思想带入CSS中来，通过CSS模块，所有的类名，动画名默认都只作用于当前模块。Webpack对CSS模块化提供了非常好的支持，只需要在CSS loader中进行简单配置即可，然后就可以直接把CSS的类名传递到组件的代码中，这样做有效避免了全局污染。具体的代码如下</p>
+<pre><code>{
+    test: /\.css$/,
+    use: [
+        {
+            loader: &quot;style-loader&quot;
+        }, {
+            loader: &quot;css-loader&quot;,
+            options: {
+                modules: true, // 指定启用css modules
+                localIdentName: &apos;[name]__[local]--[hash:base64:5]&apos; // 指定css的类名格式
+            }
+        }
+    ]
+}
+</code></pre><h2 id="loaders"><a href="#loaders" class="headerlink" title="loaders"></a>loaders</h2><p>通过使用不同的loader，webpack有能力调用外部的脚本或工具，实现对不同格式的文件的处理，比如说分析转换scss为css，或者把下一代的JS文件（ES6，ES7)转换为现代浏览器兼容的JS文件，对React的开发而言，合适的Loaders可以把React的中用到的JSX文件转换为JS文件。</p>
 <p>Loaders需要单独安装并且需要在webpack.config.js中的modules关键字下进行配置，Loaders的配置包括以下几方面：</p>
 <ul>
 <li>test: 一个用以匹配loaders所处理文件的拓展名的正则表达式（必须）；</li>
@@ -553,8 +600,10 @@ ReactDOM.render(
 <li>query：为loaders提供额外的设置选项（可选）。</li>
 </ul>
 <h3 id="Babel的安装与配置"><a href="#Babel的安装与配置" class="headerlink" title="Babel的安装与配置"></a>Babel的安装与配置</h3><p>Babel其实是几个模块化的包，其核心功能位于称为babel-core的npm包中，webpack可以把其不同的包整合在一起使用，对于每一个你需要的功能或拓展，你都需要安装单独的包（用得最多的是解析Es6的babel-env-preset包和解析JSX的babel-preset-react包）。</p>
-<p>一次性安装这些依赖包<br>    // npm一次性安装多个依赖模块，模块之间用空格隔开<br>    npm install –save-dev babel-core babel-loader babel-preset-env babel-preset-react</p>
-<h2 id="插件plugins"><a href="#插件plugins" class="headerlink" title="插件plugins"></a>插件plugins</h2><p>插件（Plugins）是用来拓展Webpack功能的，它们会在整个构建过程中生效，执行相关的任务。<br>Loaders和Plugins常常被弄混，但是他们其实是完全不同的东西，可以这么来说，loaders是在打包构建过程中用来处理源文件的（JSX，Scss，Less..），一次处理一个，插件并不直接操作单个文件，它直接对整个构建过程其作用。</p>
+<p>一次性安装这些依赖包</p>
+<pre><code>// npm一次性安装多个依赖模块，模块之间用空格隔开
+npm install --save-dev babel-core babel-loader babel-preset-env babel-preset-react
+</code></pre><h2 id="插件plugins"><a href="#插件plugins" class="headerlink" title="插件plugins"></a>插件plugins</h2><p>插件（Plugins）是用来拓展Webpack功能的，它们会在整个构建过程中生效，执行相关的任务。<br>Loaders和Plugins常常被弄混，但是他们其实是完全不同的东西，可以这么来说，loaders是在打包构建过程中用来处理源文件的（JSX，Scss，Less..），一次处理一个，插件并不直接操作单个文件，它直接对整个构建过程其作用。</p>
 <h3 id="使用插件的方法"><a href="#使用插件的方法" class="headerlink" title="使用插件的方法"></a>使用插件的方法</h3><p>要使用某个插件，我们需要通过npm安装它，然后要做的就是在webpack配置中的plugins关键字部分添加该插件的一个实例（plugins是一个数组）继续上面的例子，我们添加了一个给打包后代码添加版权声明的插件。</p>
 <pre><code>plugins: [
     new webpack.BannerPlugin(&apos;版权所有，翻版必究&apos;)
@@ -566,6 +615,57 @@ ReactDOM.render(
     
     
 
+
+
+	<div>
+	
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+
+	
+	</div>
+
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/03/07/webpack入门/">webpack入门</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 amy 的个人博客">amy</a></p>
+  <p><span>发布时间:</span>2018年03月07日 - 09:03</p>
+  <p><span>最后更新:</span>2018年03月10日 - 10:03</p>
+  <p><span>原始链接:</span><a href="/2018/03/07/webpack入门/" title="webpack入门">http://rudy-zhang.me/2018/03/07/webpack入门/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://rudy-zhang.me/2018/03/07/webpack入门/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+
+
+      
+	</div>
+
     
 
     
@@ -576,7 +676,7 @@ ReactDOM.render(
       
         <div class="post-tags">
           
-            <a href="/tags/webpack/" rel="tag"># webpack</a>
+            <a href="/tags/webpack/" rel="tag"><i class="fa fa-tag"></i> webpack</a>
           
         </div>
       
@@ -623,13 +723,13 @@ ReactDOM.render(
         <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style">
 <span class="jiathis_txt">分享到：</span>
-<a class="jiathis_button_fav">收藏夹</a>
 <a class="jiathis_button_copy">复制网址</a>
 <a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_fav">收藏夹</a>
 <a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_douban">豆瓣</a>
 <a class="jiathis_button_qzone">QQ空间</a>
 <a class="jiathis_button_tqq">腾讯微博</a>
-<a class="jiathis_button_douban">豆瓣</a>
 <a class="jiathis_button_share">一键分享</a>
 
 <a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
@@ -645,6 +745,7 @@ var jiathis_config={
 </script>
 <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
 <!-- JiaThis Button END -->
+
       
     </div>
   </div>
@@ -658,12 +759,7 @@ var jiathis_config={
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDY5NS8xMTIzMg=="></div>
     </div>
 
   
@@ -756,13 +852,13 @@ var jiathis_config={
                   <span class="links-of-author-item">
                     <a href="https://github.com/amyyyyyyy" target="_blank" title="GitHub">
                       
-                        <i class="fa fa-fw fa-github"></i></a>
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
                   </span>
                 
                   <span class="links-of-author-item">
                     <a href="https://weibo.com/u/3814374511" target="_blank" title="微博">
                       
-                        <i class="fa fa-fw fa-weibo"></i></a>
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
                   </span>
                 
             </div>
@@ -809,18 +905,40 @@ var jiathis_config={
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        
+<!-- 网站底部加上访问量 -->
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">amy</span>
-
+  <!-- span>Hosted by <a href="https://pages.coding.me" target="_blank" style="font-weight: bold">Coding Pages</a></span -->
   
 </div>
-
+<!-- 注释掉hexo强力驱动 -->
+<!--
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
+-->
+
+
+<div class="powered-by">
+<span class="post-meta-divider">|</span>
+<i class="fa fa-eye"></i>
+<span id="busuanzi_container_site_pv">
+    访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+</div>
+
+<div class="powered-by">
+<span class="post-meta-divider">|</span>
+<i class="fa fa-user-md"></i>
+<span id="busuanzi_container_site_uv">
+  访问用户<span id="busuanzi_value_site_uv"></span>人
+</span>
+</div>
 
 
   <span class="post-meta-divider">|</span>
@@ -830,6 +948,28 @@ var jiathis_config={
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">| 博客全站共12.6k字❤ </span>
+</div>
+
+<!-- 百度资源 文章自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 
 
         
@@ -952,26 +1092,6 @@ var jiathis_config={
 
   
 
-    
-      <script id="dsq-count-scr" src="https://lee.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://rudy-zhang.me/2018/03/07/webpack入门/';
-          this.page.identifier = '2018/03/07/webpack入门/';
-          this.page.title = 'webpack入门';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://lee.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
 
 
 
@@ -984,6 +1104,21 @@ var jiathis_config={
   
 
 
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
 
 
 
@@ -1334,5 +1469,7 @@ var jiathis_config={
 
   
 
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
 </body>
 </html>
