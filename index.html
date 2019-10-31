@@ -424,31 +424,31 @@
             <p>写在前面：</p>
 <p>&emsp;&emsp;&emsp;&emsp;参考了 <a href="https://element.eleme.cn/#/" target="_blank" rel="noopener">element-ui</a> 按需加载的实现方式，将每个组件单独打包，使用 <code>babel-plugin-component</code> 插件进行按需引入。实现按需加载功能。</p>
 <h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>&emsp;&emsp;&emsp;&emsp;先上一张我项目的目录结构:</p>
-<p>&emsp;&emsp;&emsp;&emsp;<img src="/Users/Lee/Desktop/目录.jpg" alt=""></p>
+<p>&emsp;&emsp;&emsp;&emsp;<img src="../images/目录.jpg" alt=""></p>
 <p><code>babel-plugin-component</code> 需要的最后打包出来的目录结构:</p>
-<p>&emsp;&emsp;&emsp;&emsp;<img src="/Users/Lee/Desktop/test.png" alt=""></p>
+<p>&emsp;&emsp;&emsp;&emsp;<img src="../images/test.png" alt=""></p>
 <p>最后项目成功打包出来的目录结构：</p>
-<p>&emsp;&emsp;&emsp;&emsp;<img src="/Users/Lee/Desktop/test1.png" alt=""></p>
+<p>&emsp;&emsp;&emsp;&emsp;<img src="../images/test1.png" alt=""></p>
 <h2 id="每个组件目录下增加-index-ts"><a href="#每个组件目录下增加-index-ts" class="headerlink" title="每个组件目录下增加 index.ts"></a>每个组件目录下增加 index.ts</h2><p>index.ts 中编写 install 方法，导出组件。</p>
-<p><img src="/Users/Lee/Desktop/test6.jpg" alt=""></p>
+<p><img src="../images/test6.jpg" alt=""></p>
 <h2 id="修改-webpack-配置"><a href="#修改-webpack-配置" class="headerlink" title="修改 webpack 配置"></a>修改 webpack 配置</h2><p>由于想将项目打包逻辑与单独组件打包逻辑分别独立开来，于是单独抽出了一个组件打包配置。</p>
-<p><img src="/Users/Lee/Desktop/test3.png" alt=""></p>
+<p><img src="../images/test3.png" alt=""></p>
 <p><code>webpack.prod.component.conf</code> 为组件单独打包配置</p>
 <p>首先参考 element 抽离出一个存有组件路径的 JSON 文件，如下图：</p>
-<p><img src="/Users/Lee/Desktop/test4.jpg" alt=""></p>
+<p><img src="../images/test4.jpg" alt=""></p>
 <p>然后修改 webpack 入口文件配置</p>
-<p><img src="/Users/Lee/Desktop/test5.png" alt=""></p>
+<p><img src="../images/test5.png" alt=""></p>
 <p>最后抽离 css 文件配置，将所有组件的 css 文件都放入一个文件夹中。<br> <code>babel-plugin-component</code> 插件会通过你设置的这个文件夹名字，在文件夹中寻找组件对应的 css 文件。</p>
-<p><img src="/Users/Lee/Desktop/test7.jpg" alt=""></p>
+<p><img src="../images/test7.jpg" alt=""></p>
 <h2 id="全局引入组件"><a href="#全局引入组件" class="headerlink" title="全局引入组件"></a>全局引入组件</h2><p>为项目增加 index.ts 入口，编写组件 install 方法。</p>
-<p><img src="/Users/Lee/Desktop/test8.jpg" alt=""></p>
+<p><img src="../images/test8.jpg" alt=""></p>
 <p>ps: 由于我语言环境是 TS 环境，所以 install 方法中注册组件时用的是 options.name，js 导出直接是 component.name 即可。</p>
 <h2 id="发布-npm-包与使用"><a href="#发布-npm-包与使用" class="headerlink" title="发布 npm 包与使用"></a>发布 npm 包与使用</h2><p>最后发布 npm 包时，需要把你打出的组件目录也一并发布。</p>
 <p>使用时只需在 babel.config 中配置</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"plugins"</span>: [</span><br><span class="line">    [</span><br><span class="line">      <span class="string">"component"</span>,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"libraryName"</span>: <span class="string">"你的 npm 库名字"</span>,</span><br><span class="line">        <span class="string">"styleLibraryName"</span>: <span class="string">"打包存放 css 文件夹的名字"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
 <p>更多配置请参考<a href="https://www.npmjs.com/package/babel-plugin-component" target="_blank" rel="noopener">官网</a> </p>
 <p>下面是我的组件项目打包成功后的使用截图:</p>
-<p><img src="/Users/Lee/Desktop/test9.jpg" alt=""></p>
+<p><img src="../images/test9.jpg" alt=""></p>
 <p>—end</p>
 
           
