@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[移动端适配]]></title>
-    <url>%2F2018%2F05%2F16%2F%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[webpack版本升级到4]]></title>
     <url>%2F2018%2F03%2F14%2Fwebpack%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7%E5%88%B04%2F</url>
     <content type="text"><![CDATA[听说webpack4发布了 于是把组里的项目升级到了webpack4 webpack4新特性环境不再支持Node.js 4.根据 package.json 配置, Node.js 的最低支持版本为 6.11.5; 新特性 配置默认初始化一些配置, 比如 entry 默认 ‘./src’ 开发模式和发布模式, 插件默认内置 CommonsChunk 配置简化 使用 ES6 语法，比如 Map, Set, includes 新增 WebAssembly 构建支持 如果要使用 webpack cli 命令，需要单独再安装 webpack-cli 默认配置在 Webpack 4 中，不再强制要求指定 entry 和 output 路径。webpack 4 会默认 entry 为 ./src，output 为 ./dist 构建模式 mode:Webpack 4 配置, 必须配置 mode 属性， 可选值有 development,production,none development 默认开启插件(无需配置): NamedModulesPlugin-&gt;optimization.namedModules development 模式 使用 eval 构建 module，用来提升构建速度 webpack.DefinePlugin 插件的 process.env.NODE_ENV 的值不需要再定义，默认是 developmentproduction 默认开启插件(无需配置): NoEmitOnErrorsPlugin-&gt;optimization.noEmitOnErrors ModuleConcatenationPlugin-&gt;optimization.concatenateModules webpack.DefinePlugin 插件的 process.env.NODE_ENV 的值不需要再定义，默认是 production 常用插件版本升级eslint-loader: ^ 2.0.0 file-loader:^1.1.10 vue-loader: ^14.1.1 webpack-hot-middleware extract-text-webpack-plugin: ^4.0.0-beta.0 html-webpack-plugin : ^3.0.6 已有项目升级安装 easywebpack-cli 最新版本进行升级 npm i easywebpack-cli -g 升级依赖 easy upgrade 重新安装依赖后，运行即可。 升级当中遇到的问题 相关插件版本要升级 比如说 extract-text-webpack-pluging 没升级到4.0.0-beta.0 的话将会出现如下错误 Error: Chunk.entrypoints: Use Chunks.groupsIterable and filter by instanceof Entrypoint instead 如果需要用到eslint相关 可能会出现以下错误 Module build failed: TypeError: Cannot read property ‘eslint’ of undefined 那么需要修改以下配置 mode: “development”, plugins: [ new webpack.LoaderOptionsPlugin({ options: {} }),]]></content>
