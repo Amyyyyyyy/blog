@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://rudy-zhang.me/images/ts2.png">
 <meta property="og:image" content="http://rudy-zhang.me/images/ts3.png">
 <meta property="og:image" content="http://rudy-zhang.me/images/ts4.png">
-<meta property="og:updated_time" content="2019-11-01T03:55:34.163Z">
+<meta property="og:updated_time" content="2019-11-01T05:52:14.341Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue 项目迁移 TS">
 <meta name="twitter:description" content="写在前面： 本文组要讲解如何在 Vue 项目中使用 TypeScript 来搭建并开发项目，以及介绍在此过程中遇到的一些坑。 我的项目各依赖版本： vue@2.5.17 typeScrip@3.5.3 webpack@4.35.3 ts-loader@6.0.4">
@@ -430,7 +430,19 @@
 <p><code>typeScrip@3.5.3</code></p>
 <p><code>webpack@4.35.3</code></p>
 <p><code>ts-loader@6.0.4</code></p>
-<a id="more"></a>/<br><br>## 安装 TypeScript<br>安装必要依赖<br><br><code>npm i --save-dev typescript ts-loader</code><br><br>## Webpack 配置<br><br>webpack 入口文件 main.js 修改为 main.ts<br><br><img src="/images/ts1.png" alt=""><br><br>resolve.extensions 添加 .ts<br><br><img src="/images/ts2.png" alt=""><br><br>module.rules 添加 .ts 解析规则<br><br><img src="/images/ts3.png" alt=""><br><br>此处需注意在解析 ts 时仍需要用babel-loader 进行转换，否则会出现打包报错等问题。<br><br>## 增加 tsconfig.json<br><br>在项目根路径下添加文件 tsconfig.json<br><br>官方推荐配置：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// tsconfig.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">    // 与 Vue 的浏览器支持保持一致</span><br><span class="line">    "target": "es5",</span><br><span class="line">    // 这可以对 `this` 上的数据属性进行更严格的推断</span><br><span class="line">    "strict": true,</span><br><span class="line">    // 如果使用 webpack 2+ 或 rollup，可以利用 tree-shake:</span><br><span class="line">    "module": "es2015",</span><br><span class="line">    "moduleResolution": "node"</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="安装-TypeScript"><a href="#安装-TypeScript" class="headerlink" title="安装 TypeScript"></a>安装 TypeScript</h2><p>安装必要依赖</p>
+<p><code>npm i --save-dev typescript ts-loader</code></p>
+<h2 id="Webpack-配置"><a href="#Webpack-配置" class="headerlink" title="Webpack 配置"></a>Webpack 配置</h2><p>webpack 入口文件 main.js 修改为 main.ts</p>
+<p><img src="/images/ts1.png" alt=""></p>
+<p>resolve.extensions 添加 .ts</p>
+<p><img src="/images/ts2.png" alt=""></p>
+<p>module.rules 添加 .ts 解析规则</p>
+<p><img src="/images/ts3.png" alt=""></p>
+<p>此处需注意在解析 ts 时仍需要用babel-loader 进行转换，否则会出现打包报错等问题。</p>
+<h2 id="增加-tsconfig-json"><a href="#增加-tsconfig-json" class="headerlink" title="增加 tsconfig.json"></a>增加 tsconfig.json</h2><p>在项目根路径下添加文件 tsconfig.json</p>
+<p>官方推荐配置：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// tsconfig.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">    // 与 Vue 的浏览器支持保持一致</span><br><span class="line">    "target": "es5",</span><br><span class="line">    // 这可以对 `this` 上的数据属性进行更严格的推断</span><br><span class="line">    "strict": true,</span><br><span class="line">    // 如果使用 webpack 2+ 或 rollup，可以利用 tree-shake:</span><br><span class="line">    "module": "es2015",</span><br><span class="line">    "moduleResolution": "node"</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="增加-vue-文件类型声明"><a href="#增加-vue-文件类型声明" class="headerlink" title="增加 .vue 文件类型声明"></a>增加 .vue 文件类型声明</h2><p>src 目录下添加文件 index.d.ts</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">declare</span> <span class="keyword">module</span> "*.vue" &#123;</span><br><span class="line">  <span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">"vue"</span>;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> Vue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>意思是告诉TypeScript *.vue后缀的文件可以交给vue模块来处理。</p>
@@ -476,7 +488,7 @@
   <p><span>本文标题:</span><a href="/2019/11/01/项目迁移TS/">Vue 项目迁移 TS</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 amy 的个人博客">amy</a></p>
   <p><span>发布时间:</span>2019年11月01日 - 10:11</p>
-  <p><span>最后更新:</span>2019年11月01日 - 11:11</p>
+  <p><span>最后更新:</span>2019年11月01日 - 13:11</p>
   <p><span>原始链接:</span><a href="/2019/11/01/项目迁移TS/" title="Vue 项目迁移 TS">http://rudy-zhang.me/2019/11/01/项目迁移TS/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://rudy-zhang.me/2019/11/01/项目迁移TS/"  aria-label="复制成功！"></i></span>
   </p>
@@ -716,7 +728,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#增加-vue-文件类型声明"><span class="nav-number">1.</span> <span class="nav-text">增加 .vue 文件类型声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目改造"><span class="nav-number">2.</span> <span class="nav-text">项目改造</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Vue-TypeScript-装饰器"><span class="nav-number">2.1.</span> <span class="nav-text">安装 Vue TypeScript 装饰器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-TypeScript"><span class="nav-number">1.</span> <span class="nav-text">安装 TypeScript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Webpack-配置"><span class="nav-number">2.</span> <span class="nav-text">Webpack 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加-tsconfig-json"><span class="nav-number">3.</span> <span class="nav-text">增加 tsconfig.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加-vue-文件类型声明"><span class="nav-number">4.</span> <span class="nav-text">增加 .vue 文件类型声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目改造"><span class="nav-number">5.</span> <span class="nav-text">项目改造</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Vue-TypeScript-装饰器"><span class="nav-number">5.1.</span> <span class="nav-text">安装 Vue TypeScript 装饰器</span></a></li></ol></li></ol></div>
             
 
           </div>
