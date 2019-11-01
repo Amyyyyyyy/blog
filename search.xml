@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Vue 项目迁移 TS]]></title>
+    <url>%2F2019%2F11%2F01%2F%E9%A1%B9%E7%9B%AE%E8%BF%81%E7%A7%BBTS%2F</url>
+    <content type="text"><![CDATA[写在前面： 本文组要讲解如何在 Vue 项目中使用 TypeScript 来搭建并开发项目，以及介绍在此过程中遇到的一些坑。 我的项目各依赖版本： vue@2.5.17 typeScrip@3.5.3 webpack@4.35.3 ts-loader@6.0.4 安装 TypeScript安装必要依赖 npm i --save-dev typescript ts-loader Webpack 配置webpack 入口文件 main.js 修改为 main.ts resolve.extensions 添加 .ts module.rules 添加 .ts 解析规则 此处需注意在解析 ts 时仍需要用babel-loader 进行转换，否则会出现打包报错等问题。 增加 tsconfig.json在项目根路径下添加文件 tsconfig.json 官方推荐配置： 123456789101112// tsconfig.json&#123; "compilerOptions": &#123; // 与 Vue 的浏览器支持保持一致 "target": "es5", // 这可以对 `this` 上的数据属性进行更严格的推断 "strict": true, // 如果使用 webpack 2+ 或 rollup，可以利用 tree-shake: "module": "es2015", "moduleResolution": "node" &#125;&#125; 增加 .vue 文件类型声明src 目录下添加文件 index.d.ts 1234declare module "*.vue" &#123; import Vue from "vue"; export default Vue;&#125; 意思是告诉TypeScript *.vue后缀的文件可以交给vue模块来处理。 项目改造将 .js 文件改写为 .ts 文件 如何改写不再赘述，官方文档介绍得非常详细。 123456789101112131415161718192021import &#123; Component, Emit, Inject, Model, Prop, Provide, Vue, Watch &#125; from 'vue-property-decorator'@Componentexport class MyComponent extends Vue &#123; @Prop() propA: number = 1 @Prop(&#123; default: 'default value' &#125;) propB: string @Prop([String, Boolean]) propC: string | boolean @Prop(&#123; type: null &#125;) propD: any @Watch('child') onChildChanged(val: string, oldVal: string) &#123; &#125;&#125; 下面介绍一下如何在 Vue 中使用 TypeScript。 安装 Vue TypeScript 装饰器npm i vue-class-component vue-property-decorator --save vue-property-decorator 是在 vue-class-component 上增强了更多结合 Vue 特性的装饰器。更多详细信息参考官方文档 具体写法可以参考我的轮子项目 vue-seven-view 贴一张改造完成后的截图：]]></content>
+      <categories>
+        <category>Typescript</category>
+      </categories>
+      <tags>
+        <tag>Typescript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(造轮子)实现组件按需加载功能]]></title>
     <url>%2F2019%2F10%2F31%2F%E9%80%A0%E8%BD%AE%E5%AD%90-%E5%AE%9E%E7%8E%B0%E7%BB%84%E4%BB%B6%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD%E5%8A%9F%E8%83%BD%2F</url>
     <content type="text"><![CDATA[写在前面： &emsp;&emsp;&emsp;&emsp;参考了 element-ui 按需加载的实现方式，将每个组件单独打包，使用 babel-plugin-component 插件进行按需引入。实现按需加载功能。 目录结构&emsp;&emsp;&emsp;&emsp;先上一张我项目的目录结构: &emsp;&emsp;&emsp;&emsp; babel-plugin-component 需要的最后打包出来的目录结构: &emsp;&emsp;&emsp;&emsp; 最后项目成功打包出来的目录结构： &emsp;&emsp;&emsp;&emsp; 每个组件目录下增加 index.tsindex.ts 中编写 install 方法，导出组件。 修改 webpack 配置由于想将项目打包逻辑与单独组件打包逻辑分别独立开来，于是单独抽出了一个组件打包配置。 webpack.prod.component.conf 为组件单独打包配置 首先参考 element 抽离出一个存有组件路径的 JSON 文件，如下图： 然后修改 webpack 入口文件配置 最后抽离 css 文件配置，将所有组件的 css 文件都放入一个文件夹中。 babel-plugin-component 插件会通过你设置的这个文件夹名字，在文件夹中寻找组件对应的 css 文件。 全局引入组件为项目增加 index.ts 入口，编写组件 install 方法。 ps: 由于我语言环境是 TS 环境，所以 install 方法中注册组件时用的是 options.name，js 导出直接是 component.name 即可。 发布 npm 包与使用最后发布 npm 包时，需要把你打出的组件目录也一并发布。 使用时只需在 babel.config 中配置 123456789"plugins": [ [ "component", &#123; "libraryName": "你的 npm 库名字", "styleLibraryName": "打包存放 css 文件夹的名字" &#125; ] ] 更多配置请参考官网 下面是我的组件项目打包成功后的使用截图: —end]]></content>
