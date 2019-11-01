@@ -1883,7 +1883,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #01adff;
+  background: #4df6ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3171,4 +3171,7 @@ img:hover {
 .fa-github:before {
   width: 30px;
 height30px
+}
+.posts-expand .post-body .fancybox img {
+  margin: 0 !important;
 }
