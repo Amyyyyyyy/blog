@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[(造轮子)CSS-BEM命名规范]]></title>
+    <url>%2F2019%2F11%2F01%2F%E9%80%A0%E8%BD%AE%E5%AD%90-css-BEM%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%2F</url>
+    <content type="text"><![CDATA[写在前面： 这篇文章主要是参考了 element CSS 命名规范，然后在轮子里抽了一个样式目录结构以及规范。让轮子的样式代码更容易阅读和理解，也更可控并严谨，这是在这个轮子里搭一套 CSS 命名规范的意义。 什么是BEM命名规范，大家可以参考这篇文章 CSS — BEM 命名规范 本篇文章主要介绍如何通过 SCSS 来构建一个规则并且所有 .scss 文件遵从此规则进行撰写样式。 样式目录结构先上一张我的样式目录结构图： style 文件夹中包含了 common 文件夹和 mixins 文件夹。 common 文件中主要提取了轮子组件中需要用的的一些公共样式。 var.scss 声明了一系列组件的一些颜色，宽度，等基础变量。如下图： 命名规则编写mixins 文件夹则编写了组件命名规则，上代码截图： 具体代码可以参考我的组件(持续完善中) vue-seven-view 编写组件样式组件只需 import mixins.scss，即可编写简洁明了的样式文件： eg: 1234567@import './mixins.scss'@import './common.scss'@include b(组件名)&#123;true@include e(后代名)&#123;&#125;true@include m(状态)&#123;&#125;&#125; equal to 123456.s-组件名&#123; &#125; ---- B.s-组件名__后代名&#123; &#125; --- E.s-组件名.sm-组件名--状态 --- M 下面上一张被改写过的 scss 文件部分代码： 使用 scss 编写 BEM 规范样式之后，样式文件更易修改和重构，也更简洁明了，这应该是一个轮子最基本的功能( ⊙ o ⊙ )！。]]></content>
+      <categories>
+        <category>scss</category>
+      </categories>
+      <tags>
+        <tag>scss</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Vue 项目迁移 TS]]></title>
     <url>%2F2019%2F11%2F01%2F%E9%A1%B9%E7%9B%AE%E8%BF%81%E7%A7%BBTS%2F</url>
     <content type="text"><![CDATA[写在前面： 本文组要讲解如何在 Vue 项目中使用 TypeScript 来搭建并开发项目，以及介绍在此过程中遇到的一些坑。 我的项目各依赖版本： vue@2.5.17 typeScrip@3.5.3 webpack@4.35.3 ts-loader@6.0.4 安装 TypeScript安装必要依赖 npm i --save-dev typescript ts-loader Webpack 配置webpack 入口文件 main.js 修改为 main.ts resolve.extensions 添加 .ts module.rules 添加 .ts 解析规则 此处需注意在解析 ts 时仍需要用babel-loader 进行转换，否则会出现打包报错等问题。 增加 tsconfig.json在项目根路径下添加文件 tsconfig.json 官方推荐配置： 123456789101112// tsconfig.json&#123; "compilerOptions": &#123; // 与 Vue 的浏览器支持保持一致 "target": "es5", // 这可以对 `this` 上的数据属性进行更严格的推断 "strict": true, // 如果使用 webpack 2+ 或 rollup，可以利用 tree-shake: "module": "es2015", "moduleResolution": "node" &#125;&#125; 增加 .vue 文件类型声明src 目录下添加文件 index.d.ts 1234declare module "*.vue" &#123; import Vue from "vue"; export default Vue;&#125; 意思是告诉TypeScript *.vue后缀的文件可以交给vue模块来处理。 项目改造将 .js 文件改写为 .ts 文件 如何改写不再赘述，官方文档介绍得非常详细。 下面介绍一下如何在 Vue 中使用 TypeScript。 安装 Vue TypeScript 装饰器npm i vue-class-component vue-property-decorator --save vue-property-decorator 是在 vue-class-component 上增强了更多结合 Vue 特性的装饰器。更多详细信息参考官方文档 123456789101112131415161718192021import &#123; Component, Emit, Inject, Model, Prop, Provide, Vue, Watch &#125; from 'vue-property-decorator'@Componentexport class MyComponent extends Vue &#123; @Prop() propA: number = 1 @Prop(&#123; default: 'default value' &#125;) propB: string @Prop([String, Boolean]) propC: string | boolean @Prop(&#123; type: null &#125;) propD: any @Watch('child') onChildChanged(val: string, oldVal: string) &#123; &#125;&#125; 具体写法可以参考我的轮子项目 vue-seven-view 贴一张改造完成后的截图：]]></content>

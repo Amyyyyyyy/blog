@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="scss," />
 
 
 
@@ -81,16 +81,24 @@
 
 
 
-<meta name="description" content="welcome to my blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="amy">
-<meta property="og:url" content="http://rudy-zhang.me/index.html">
+<meta name="description" content="写在前面： 这篇文章主要是参考了 element CSS 命名规范，然后在轮子里抽了一个样式目录结构以及规范。让轮子的样式代码更容易阅读和理解，也更可控并严谨，这是在这个轮子里搭一套 CSS 命名规范的意义。 什么是BEM命名规范，大家可以参考这篇文章 CSS — BEM 命名规范 本篇文章主要介绍如何通过 SCSS 来构建一个规则并且所有 .scss 文件遵从此规则进行撰写样式。">
+<meta name="keywords" content="scss">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(造轮子)CSS-BEM命名规范">
+<meta property="og:url" content="http://rudy-zhang.me/2019/11/01/造轮子-css-BEM命名规范/index.html">
 <meta property="og:site_name" content="amy">
-<meta property="og:description" content="welcome to my blog">
+<meta property="og:description" content="写在前面： 这篇文章主要是参考了 element CSS 命名规范，然后在轮子里抽了一个样式目录结构以及规范。让轮子的样式代码更容易阅读和理解，也更可控并严谨，这是在这个轮子里搭一套 CSS 命名规范的意义。 什么是BEM命名规范，大家可以参考这篇文章 CSS — BEM 命名规范 本篇文章主要介绍如何通过 SCSS 来构建一个规则并且所有 .scss 文件遵从此规则进行撰写样式。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://rudy-zhang.me/2019/11/01/images/css1.png">
+<meta property="og:image" content="http://rudy-zhang.me/2019/11/01/images/css2.png">
+<meta property="og:image" content="http://rudy-zhang.me/2019/11/01/images/css3.png">
+<meta property="og:image" content="http://rudy-zhang.me/2019/11/01/images/css4.png">
+<meta property="og:image" content="http://rudy-zhang.me/2019/11/01/images/css5.png">
+<meta property="og:updated_time" content="2019-11-01T06:34:28.311Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="amy">
-<meta name="twitter:description" content="welcome to my blog">
+<meta name="twitter:title" content="(造轮子)CSS-BEM命名规范">
+<meta name="twitter:description" content="写在前面： 这篇文章主要是参考了 element CSS 命名规范，然后在轮子里抽了一个样式目录结构以及规范。让轮子的样式代码更容易阅读和理解，也更可控并严谨，这是在这个轮子里搭一套 CSS 命名规范的意义。 什么是BEM命名规范，大家可以参考这篇文章 CSS — BEM 命名规范 本篇文章主要介绍如何通过 SCSS 来构建一个规则并且所有 .scss 文件遵从此规则进行撰写样式。">
+<meta name="twitter:image" content="http://rudy-zhang.me/2019/11/01/images/css1.png">
 
 
 
@@ -120,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://rudy-zhang.me/"/>
+  <link rel="canonical" href="http://rudy-zhang.me/2019/11/01/造轮子-css-BEM命名规范/"/>
 
 
 
 
 
-  <title>amy</title>
+  <title>(造轮子)CSS-BEM命名规范 | amy</title>
   
 
 
@@ -155,8 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -282,9 +289,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -314,9 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/01/造轮子-css-BEM命名规范/" itemprop="url">(造轮子)CSS-BEM命名规范</a></h1>
+          <h1 class="post-title" itemprop="name headline">(造轮子)CSS-BEM命名规范</h1>
         
 
         <div class="post-meta">
@@ -419,19 +424,29 @@
       
 
       
-        
-          <p>写在前面：</p>
+        <p>写在前面：</p>
 <p>这篇文章主要是参考了 element CSS 命名规范，然后在轮子里抽了一个样式目录结构以及规范。让轮子的样式代码更容易阅读和理解，也更可控并严谨，这是在这个轮子里搭一套 CSS 命名规范的意义。</p>
 <p>什么是BEM命名规范，大家可以参考这篇文章 <a href="https://juejin.im/post/5b925e616fb9a05cdd2ce70d" target="_blank" rel="noopener">CSS — BEM 命名规范</a></p>
 <p>本篇文章主要介绍如何通过 SCSS 来构建一个规则并且所有 .scss 文件遵从此规则进行撰写样式。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/11/01/造轮子-css-BEM命名规范/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<a id="more"></a>
+<h2 id="样式目录结构"><a href="#样式目录结构" class="headerlink" title="样式目录结构"></a>样式目录结构</h2><p>先上一张我的样式目录结构图：</p>
+<p><img src="../images/css1.png" alt=""></p>
+<p>style 文件夹中包含了 common 文件夹和 mixins 文件夹。</p>
+<p>common 文件中主要提取了轮子组件中需要用的的一些公共样式。</p>
+<p>var.scss 声明了一系列组件的一些颜色，宽度，等基础变量。如下图：</p>
+<p><img src="../images/css2.png" alt=""></p>
+<h2 id="命名规则编写"><a href="#命名规则编写" class="headerlink" title="命名规则编写"></a>命名规则编写</h2><p>mixins 文件夹则编写了组件命名规则，上代码截图：</p>
+<p><img src="../images/css3.png" alt=""><br><img src="../images/css4.png" alt=""></p>
+<p>具体代码可以参考我的组件(持续完善中) <a href="https://github.com/Amyyyyyyy/vue-seven-view" target="_blank" rel="noopener">vue-seven-view</a></p>
+<h2 id="编写组件样式"><a href="#编写组件样式" class="headerlink" title="编写组件样式"></a>编写组件样式</h2><p>组件只需 import mixins.scss，即可编写简洁明了的样式文件：</p>
+<p>eg:</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> <span class="string">'./mixins.scss'</span></span><br><span class="line">@<span class="keyword">import</span> <span class="string">'./common.scss'</span></span><br><span class="line"></span><br><span class="line">@<span class="keyword">include</span> b(组件名)&#123;</span><br><span class="line">true@<span class="keyword">include</span> e(后代名)&#123;&#125;</span><br><span class="line">true@<span class="keyword">include</span> m(状态)&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>equal to</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-class">.s-</span>组件名&#123;	&#125; ---- <span class="selector-tag">B</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.s-</span>组件名__后代名&#123; &#125; --- E</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.s-</span>组件名<span class="selector-class">.sm-</span>组件名--状态 --- M</span><br></pre></td></tr></table></figure>
+<p>下面上一张被改写过的 scss 文件部分代码：</p>
+<p><img src="../images/css5.png" alt=""></p>
+<p>使用 scss 编写 BEM 规范样式之后，样式文件更易修改和重构，也更简洁明了，这应该是一个轮子最基本的功能( ⊙ o ⊙ )！。</p>
+
       
     </div>
     
@@ -442,9 +457,50 @@
 
 	<div>
 	
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+
+	
 	</div>
 
 	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/11/01/造轮子-css-BEM命名规范/">(造轮子)CSS-BEM命名规范</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 amy 的个人博客">amy</a></p>
+  <p><span>发布时间:</span>2019年11月01日 - 13:11</p>
+  <p><span>最后更新:</span>2019年11月01日 - 14:11</p>
+  <p><span>原始链接:</span><a href="/2019/11/01/造轮子-css-BEM命名规范/" title="(造轮子)CSS-BEM命名规范">http://rudy-zhang.me/2019/11/01/造轮子-css-BEM命名规范/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://rudy-zhang.me/2019/11/01/造轮子-css-BEM命名规范/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+
+
       
 	</div>
 
@@ -456,395 +512,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://rudy-zhang.me/2019/11/01/项目迁移TS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="amy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/pig.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="amy">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/01/项目迁移TS/" itemprop="url">Vue 项目迁移 TS</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-01T10:28:52+08:00">
-                2019-11-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Typescript/" itemprop="url" rel="index">
-                    <span itemprop="name">Typescript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/scss/" rel="tag"><i class="fa fa-tag"></i> scss</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  486
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>写在前面：</p>
-<p>本文组要讲解如何在 Vue 项目中使用 TypeScript 来搭建并开发项目，以及介绍在此过程中遇到的一些坑。</p>
-<p>我的项目各依赖版本：</p>
-<p><code>vue@2.5.17</code></p>
-<p><code>typeScrip@3.5.3</code></p>
-<p><code>webpack@4.35.3</code></p>
-<p><code>ts-loader@6.0.4</code></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/11/01/项目迁移TS/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/01/项目迁移TS/" rel="next" title="Vue 项目迁移 TS">
+                <i class="fa fa-chevron-left"></i> Vue 项目迁移 TS
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
+          <span class="post-nav-divider"></span>
 
-
-	<div>
-	
-	</div>
-
-	<div>
-      
-	</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://rudy-zhang.me/2019/10/31/造轮子-实现组件按需加载功能/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="amy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/pig.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="amy">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/31/造轮子-实现组件按需加载功能/" itemprop="url">(造轮子)实现组件按需加载功能</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-31T20:04:57+08:00">
-                2019-10-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  432
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>写在前面：</p>
-<p>&emsp;&emsp;&emsp;&emsp;参考了 <a href="https://element.eleme.cn/#/" target="_blank" rel="noopener">element-ui</a> 按需加载的实现方式，将每个组件单独打包，使用 <code>babel-plugin-component</code> 插件进行按需引入。实现按需加载功能。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/31/造轮子-实现组件按需加载功能/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-
-
-	<div>
-	
-	</div>
-
-	<div>
-      
-	</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -854,558 +551,54 @@
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_share">一键分享</a>
 
-  
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://rudy-zhang.me/2018/03/14/webpack版本升级到4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="amy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/pig.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="amy">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/14/webpack版本升级到4/" itemprop="url">webpack版本升级到4</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T13:37:43+08:00">
-                2018-03-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/模块化开发/" itemprop="url" rel="index">
-                    <span itemprop="name">模块化开发</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  452
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>听说webpack4发布了 于是把组里的项目升级到了webpack4</p>
-<h3 id="webpack4新特性"><a href="#webpack4新特性" class="headerlink" title="webpack4新特性"></a>webpack4新特性</h3><h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><p>不再支持Node.js 4.<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/14/webpack版本升级到4/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
-
-
-
-	<div>
-	
-	</div>
-
-	<div>
-      
-	</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://rudy-zhang.me/2018/03/02/数据结构/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="amy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/pig.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="amy">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/02/数据结构/" itemprop="url">堆排序</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-02T12:42:02+08:00">
-                2018-03-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  856
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="一、二叉树的概念"><a href="#一、二叉树的概念" class="headerlink" title="一、二叉树的概念"></a>一、二叉树的概念</h2><p>在计算机科学中，二叉树是每个节点最多有两个子数的树结构。通常子树被称作“左子树”和“右子树”。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/02/数据结构/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDY5NS8xMTIzMg=="></div>
     </div>
-    
-    
-    
-
-
-
-	<div>
-	
-	</div>
-
-	<div>
-      
-	</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://rudy-zhang.me/2018/02/23/使用hexo-gitpages搭建博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="amy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/pig.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="amy">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/23/使用hexo-gitpages搭建博客/" itemprop="url">使用hexo+gitpages搭建博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-23T16:01:53+08:00">
-                2018-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  480
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h5 id="注-以下步骤基于-mac-系统"><a href="#注-以下步骤基于-mac-系统" class="headerlink" title="注: 以下步骤基于 mac 系统"></a>注: 以下步骤基于 mac 系统</h5><hr>
-<p>以下是我安装的一些步骤：<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/23/使用hexo-gitpages搭建博客/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-
-
-	<div>
-	
-	</div>
-
-	<div>
-      
-	</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
 
   
 
 
-          </div>
-          
-
-
-          
 
         </div>
         
@@ -1426,8 +619,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1507,6 +709,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#样式目录结构"><span class="nav-number">1.</span> <span class="nav-text">样式目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名规则编写"><span class="nav-number">2.</span> <span class="nav-text">命名规则编写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写组件样式"><span class="nav-number">3.</span> <span class="nav-text">编写组件样式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1691,6 +909,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1719,6 +941,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
