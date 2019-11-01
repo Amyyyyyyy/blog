@@ -94,7 +94,7 @@
 <meta property="og:image" content="http://rudy-zhang.me/images/css3.png">
 <meta property="og:image" content="http://rudy-zhang.me/images/css4.png">
 <meta property="og:image" content="http://rudy-zhang.me/images/css5.png">
-<meta property="og:updated_time" content="2019-11-01T06:37:22.624Z">
+<meta property="og:updated_time" content="2019-11-01T06:40:29.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(造轮子)CSS-BEM命名规范">
 <meta name="twitter:description" content="写在前面： 这篇文章主要是参考了 element CSS 命名规范，然后在轮子里抽了一个样式目录结构以及规范。让轮子的样式代码更容易阅读和理解，也更可控并严谨，这是在这个轮子里搭一套 CSS 命名规范的意义。 什么是BEM命名规范，大家可以参考这篇文章 CSS — BEM 命名规范 本篇文章主要介绍如何通过 SCSS 来构建一个规则并且所有 .scss 文件遵从此规则进行撰写样式。">
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  425
+                  423
                 </span>
               
 
@@ -440,7 +440,7 @@
 <p>具体代码可以参考我的组件(持续完善中) <a href="https://github.com/Amyyyyyyy/vue-seven-view" target="_blank" rel="noopener">vue-seven-view</a></p>
 <h2 id="编写组件样式"><a href="#编写组件样式" class="headerlink" title="编写组件样式"></a>编写组件样式</h2><p>组件只需 import mixins.scss，即可编写简洁明了的样式文件：</p>
 <p>eg:</p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> <span class="string">'./mixins.scss'</span></span><br><span class="line">@<span class="keyword">import</span> <span class="string">'./common.scss'</span></span><br><span class="line"></span><br><span class="line">@<span class="keyword">include</span> b(组件名)&#123;</span><br><span class="line">true@<span class="keyword">include</span> e(后代名)&#123;&#125;</span><br><span class="line">true@<span class="keyword">include</span> m(状态)&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> <span class="string">'./mixins.scss'</span></span><br><span class="line">@<span class="keyword">import</span> <span class="string">'./common.scss'</span></span><br><span class="line"></span><br><span class="line">@<span class="keyword">include</span> b(组件名)&#123;</span><br><span class="line">  @<span class="keyword">include</span> e(后代名)&#123;&#125;</span><br><span class="line">  @<span class="keyword">include</span> m(状态)&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>equal to</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-class">.s-</span>组件名&#123;	&#125; ---- <span class="selector-tag">B</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.s-</span>组件名__后代名&#123; &#125; --- E</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.s-</span>组件名<span class="selector-class">.sm-</span>组件名--状态 --- M</span><br></pre></td></tr></table></figure>
 <p>下面上一张被改写过的 scss 文件部分代码：</p>
