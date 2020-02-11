@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[webpack 性能调优]]></title>
+    <url>%2F2020%2F02%2F11%2Fwebpack-%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98%2F</url>
+    <content type="text"><![CDATA[1 loader 使用 exclude，避免不必要的庞大的转译；如 webpack 官方在介绍 babel-loader 时给出的示例； 1234567891011121314module: &#123; rules: [ &#123; test: /\.js$/, exclude: /(node_modules|bower_components)/, use: &#123; loader: 'babel-loader', options: &#123; presets: ['@babel/preset-env'] &#125; &#125; &#125; ]&#125; 2 DllPlugin 结合 DllRefrencePlugin 打包三方依赖，提升编译速度。 1234567891011121314151617181920// webpack.dll.config.jsmodule.exports = &#123; entry: &#123; // 定义程序中打包公共文件的入口文件vendor.js vendor: [path.resolve(src, 'js', 'vendor.js')], &#125;, plugins: [ new webpack.DllPlugin(&#123; // manifest缓存文件的请求上下文（默认为webpack执行环境上下文） context: process.cwd(), // manifest.json文件的输出位置 path: path.join(src, 'js', 'dll', '[name]-manifest.json'), // 定义打包的公共vendor文件对外暴露的函数名 name: '[name]_[hash]' &#125;) ]&#125; 在 vendor.js 中声明项目程序中所引用的静态公共资源。 根据 webpack.dll.config.js，会在指定位置生成 vendor.dll.js文件。 生成静态公共资源 vendor.dll.js 之后，下一步就要在入口文件中关联引用。 1234567891011121314151617// webpack.config.jsmodule.exports = &#123; entry: &#123; // 项目入口文件 'app':path.resolve(src, 'js', 'main.js') &#125;, plugins: [ // dllPlugin关联配置 new webpack.DllReferencePlugin(&#123; // 跟dll.config里面DllPlugin的context一致 context: process.cwd(), // dll过程生成的manifest文件 manifest: require(path.join(src, 'js', "dll", "vendor-manifest.json")) &#125;) ]&#125; 3 使用 HappyPack 实现多进程编译 在比较复杂的大中型项目中，使用 happypack 才能看到比较明显的构建速度提升。 1234567891011121314151617181920212223242526272829// webpack.config.jsconst HappyPack = require('happypack');module.exports = &#123; ... module: &#123; rules: [ test: /\.js$/, // use: ['babel-loader?cacheDirectory'] 之前是使用这种方式直接使用 loader // 现在用下面的方式替换成 happypack/loader，并使用 id 指定创建的 HappyPack 插件 use: ['happypack/loader?id=babel'], // 排除 node_modules 目录下的文件 exclude: /node_modules/ ] &#125;, plugins: [ ..., new HappyPack(&#123; /* * 必须配置 */ // id 标识符，要和 rules 中指定的 id 对应起来 id: 'babel', // 需要使用的 loader，用法和 rules 中 Loader 配置一样 // 可以直接是字符串，也可以是对象形式 loaders: ['babel-loader?cacheDirectory'] &#125;) ]&#125;]]></content>
+      <categories>
+        <category>前端性能优化</category>
+      </categories>
+      <tags>
+        <tag>前端性能优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(造轮子)CSS-BEM命名规范]]></title>
     <url>%2F2019%2F11%2F01%2F%E9%80%A0%E8%BD%AE%E5%AD%90-css-BEM%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%2F</url>
     <content type="text"><![CDATA[写在前面： 这篇文章主要是参考了 element CSS 命名规范，然后在轮子里抽了一个样式目录结构以及规范。让轮子的样式代码更容易阅读和理解，也更可控并严谨，这是在这个轮子里搭一套 CSS 命名规范的意义。 什么是BEM命名规范，大家可以参考这篇文章 CSS — BEM 命名规范 本篇文章主要介绍如何通过 SCSS 来构建一个规则并且所有 .scss 文件遵从此规则进行撰写样式。 样式目录结构先上一张我的样式目录结构图： style 文件夹中包含了 common 文件夹和 mixins 文件夹。 common 文件中主要提取了轮子组件中需要用的的一些公共样式。 var.scss 声明了一系列组件的一些颜色，宽度，等基础变量。如下图： 命名规则编写mixins 文件夹则编写了组件命名规则，上代码截图： 具体代码可以参考我的组件(持续完善中) vue-seven-view 编写组件样式组件只需 import mixins.scss，即可编写简洁明了的样式文件： eg: 1234567@import './mixins.scss'@import './common.scss'@include b(组件名)&#123; @include e(后代名)&#123;&#125; @include m(状态)&#123;&#125;&#125; equal to 123456.s-组件名&#123; &#125; ---- B.s-组件名__后代名&#123; &#125; --- E.s-组件名.sm-组件名--状态 --- M 下面上一张被改写过的 scss 文件部分代码： 使用 scss 编写 BEM 规范样式之后，样式文件更易修改和重构，也更简洁明了，这应该是一个轮子最基本的功能( ⊙ o ⊙ )！。]]></content>
