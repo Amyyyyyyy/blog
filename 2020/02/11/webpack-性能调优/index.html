@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="1 loader 使用 exclude，避免不必要的庞大的转译；如 webpack 官方在介绍 babel-loader 时给出的示例； 1234567891011121314module: &amp;#123;  rules: [    &amp;#123;      test: /\.js$/,      exclude: /(node_modules|bower_components)/,      use">
+<meta name="description" content="1 loader 使用 exclude，避免不必要的庞大的转译；">
 <meta name="keywords" content="前端性能优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack 性能调优">
 <meta property="og:url" content="http://rudy-zhang.me/2020/02/11/webpack-性能调优/index.html">
 <meta property="og:site_name" content="amy">
-<meta property="og:description" content="1 loader 使用 exclude，避免不必要的庞大的转译；如 webpack 官方在介绍 babel-loader 时给出的示例； 1234567891011121314module: &amp;#123;  rules: [    &amp;#123;      test: /\.js$/,      exclude: /(node_modules|bower_components)/,      use">
+<meta property="og:description" content="1 loader 使用 exclude，避免不必要的庞大的转译；">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-11T04:30:34.616Z">
+<meta property="og:updated_time" content="2020-02-18T08:00:39.569Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack 性能调优">
-<meta name="twitter:description" content="1 loader 使用 exclude，避免不必要的庞大的转译；如 webpack 官方在介绍 babel-loader 时给出的示例； 1234567891011121314module: &amp;#123;  rules: [    &amp;#123;      test: /\.js$/,      exclude: /(node_modules|bower_components)/,      use">
+<meta name="twitter:description" content="1 loader 使用 exclude，避免不必要的庞大的转译；">
 
 
 
@@ -418,7 +418,7 @@
       
 
       
-        <p>1 loader 使用 exclude，避免不必要的庞大的转译；<br>如 webpack 官方在介绍 babel-loader 时给出的示例；</p>
+        <p>1 loader 使用 exclude，避免不必要的庞大的转译；<br><a id="more"></a><br>如 webpack 官方在介绍 babel-loader 时给出的示例；</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">      exclude: <span class="regexp">/(node_modules|bower_components)/</span>,</span><br><span class="line">      use: &#123;</span><br><span class="line">        loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">        options: &#123;</span><br><span class="line">          presets: [<span class="string">'@babel/preset-env'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>2 DllPlugin 结合 DllRefrencePlugin 打包三方依赖，提升编译速度。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.dll.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: &#123;</span><br><span class="line">        <span class="comment">// 定义程序中打包公共文件的入口文件vendor.js</span></span><br><span class="line">        vendor: [path.resolve(src, <span class="string">'js'</span>, <span class="string">'vendor.js'</span>)],</span><br><span class="line">    &#125;,</span><br><span class="line">    </span><br><span class="line">    plugins: [</span><br><span class="line">        <span class="keyword">new</span> webpack.DllPlugin(&#123;</span><br><span class="line">            <span class="comment">// manifest缓存文件的请求上下文（默认为webpack执行环境上下文）</span></span><br><span class="line">            context: process.cwd(),</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// manifest.json文件的输出位置</span></span><br><span class="line">            path: path.join(src, <span class="string">'js'</span>, <span class="string">'dll'</span>, <span class="string">'[name]-manifest.json'</span>),</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 定义打包的公共vendor文件对外暴露的函数名</span></span><br><span class="line">            name: <span class="string">'[name]_[hash]'</span></span><br><span class="line">        &#125;)</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -462,7 +462,7 @@
   <p><span>本文标题:</span><a href="/2020/02/11/webpack-性能调优/">webpack 性能调优</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 amy 的个人博客">amy</a></p>
   <p><span>发布时间:</span>2020年02月11日 - 11:02</p>
-  <p><span>最后更新:</span>2020年02月11日 - 12:02</p>
+  <p><span>最后更新:</span>2020年02月18日 - 16:02</p>
   <p><span>原始链接:</span><a href="/2020/02/11/webpack-性能调优/" title="webpack 性能调优">http://rudy-zhang.me/2020/02/11/webpack-性能调优/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://rudy-zhang.me/2020/02/11/webpack-性能调优/"  aria-label="复制成功！"></i></span>
   </p>
